@@ -70,21 +70,20 @@ Route::get('/mail', function () {
         'Humano Desconocido'
     );
 
+    $data_email['home'] = "https://vento.com/";
 
-    $data_email['confirmation_code'] = '200';
-    $data_email['name'] = 'Hector Ponce';
+    /* LINK AND IMG FROM CONTENT */
+    $data_email['content_href'] = "https://vento.com/rocketman-carrera-250/";
+    $data_email['content_src'] = "https://vento.com/modules/images/main.gif";
+
 
     $i = 0;
     foreach ($receivers as $user) {
         Mail::send('mails.mail', $data_email, function($message) use ($user, $names, $i) {
-            $message->to($user)->subject('Hola '.$names[$i].', prueba de campaña v2');
+            $message->to($user)->subject('Mundo '.$names[$i]);
         });
         $i++;
     }
-
-    /*Mail::send('mails.mail', $data_email, function($message) use ($receivers) {
-        $message->to($receivers)->subject('Prueba de Correo Marketing desde Correo @vento.com');
-    });*/
 
     return "<h1 style='text-align: center;'><span style='color: rgb(35, 111, 161); font-family: 'comic sans ms', sans-serif;'>CORREO ENVIADO CORRECTAMENTE</span></h1>";
 });

@@ -240,6 +240,12 @@
 
     <!--Header Web-->
     <div id="header">
+        <table align="center">
+            <tr>
+            <td><p><a href="{{$home}}"><img src="https://vento.com/modules/images/ventologo.png"></a></p></td>
+            </tr>	
+        </table>
+
         <table align="center" width="100%">
             <tr>
                 <td><p>
@@ -249,7 +255,6 @@
                 </p></td>
                 <td><p><a href="https://vento.com/tienda/">MODELOS</a></p></td>
                 <td><p><a href="https://vento.com/agencias/">AGENCIAS</a></p></td>
-                <td><p><a href="https://vento.com/"><img src="https://vento.com/modules/images/ventologo.png"></a></p></td>
                 <td><p><a href="https://ventorefacciones.com/">REFACCIONES</a></p></td>
                 <td><p><a href="https://vento.com/blog/">BLOG</a></p></td>
                 <td><p><a href="https://vento.com/tienda/"><img src="https://vento.com/modules/images/shop.png"></a></p></td>
@@ -261,7 +266,7 @@
     <div id="headerm">
         <table align="center" width="100%">
             <tr>
-                <td><p><a href="https://vento.com/"><img src="https://vento.com/modules/images/ventologo.png"></a></p></td>
+                <td><p><a href="{{$home}}"><img src="https://vento.com/modules/images/ventologo.png"></a></p></td>
             </tr>
         </table>
     </div>
@@ -270,9 +275,9 @@
     
 
     <div id="content">
-        <a href="https://vento.com/rocketman-carrera-250/" target="_blank">
+        <a href="{{$content_href}}" target="_blank">
             <center>
-                <img src="https://vento.com/modules/images/main.gif" width="100%">
+                <img src="{{$content_src}}" width="100%">
             </center>
         </a>
     </div>
@@ -282,10 +287,10 @@
             <img src="https://vento.com/modules/images/despiertacaferacer.png">
         </center>
         
-        <p>Estrena hoy tu Vento ROCKETMAN CARRERA 250 con $11,000 de descuento en <a href="https://vento.com/"><b>www.vento.com</b></a></p>
+        <p>Estrena hoy tu Vento ROCKETMAN CARRERA 250 con $11,000 de descuento en <a href="{{$home}}"><b>www.vento.com</b></a></p>
 
         <div class="btn" style="margin-top:30px;">
-            <p><a href="https://vento.com/rocketman-carrera-250/">QUIERO MÁS INFORMACIÓN</a></p>
+            <p><a href="{{$content_href}}">QUIERO MÁS INFORMACIÓN</a></p>
         </div>
         <div class="btn" style="margin-top:30px;margin-bottom:30px;">
             <p><a href="https://vento.com/modules/email/credit">DESCUBRE VENTOCREDIT</a></p>
@@ -436,7 +441,7 @@
 
     <div id="footer">
         <div id="footercontent">	
-            <a href="https://vento.com/">
+            <a href="{{$home}}">
                 <center>
                     <img src="https://vento.com/modules/images/ventologo.png">
                 </center>
