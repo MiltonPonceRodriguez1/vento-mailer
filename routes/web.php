@@ -19,12 +19,27 @@ Route::get('/', function () {
 });
 
 Route::get('/mail', function () {
-    //$receivers = Receiver::pluck('email');
+
     /*$receivers = array(
-        'hector.poncevna@gmail.com',
+        'miltonponceipn@gmail.com',
+        'ja.1999.ga@gmail.com',
+        'xxd39933@gmail.com',
+        'humano.qwert.1234@gmail.com',
         'toxquisandra@gmail.com',
         'aline.quintero.vna@gmail.com',
-        'moises.calderon@vnagroup.us'
+        'pamela.mvna@gmail.com',
+        'rodrigo.ogme@gmail.com'
+    );
+    
+    $names = array(
+        'Milton Ponce Rodriguez',
+        'Javier Garcia Montes de Oca',
+        'Dokken Lee',
+        'Humano Desconocido',
+        'Sandra Arely González Toxqui',
+        'Aline Quintero Campos',
+        'Pamela',
+        'Rodrigo Larrañaga'
     );*/
 
     $receivers = array(
@@ -37,17 +52,34 @@ Route::get('/mail', function () {
         '2173034772@cua.uam.mx',
         '2173034709@cua.uam.mx',
         'humano.qwert.1234@gmail.com',
-        '2163032024@cua.uam.mx'
+        '2163032024@cua.uam.mx',
+        'humano.humano.0910@gmail.com'
     );
+
+    $names = array(
+        'Milton Ponce Rodriguez',
+        'Javier Garcia Montes de Oca',
+        'JaviDende',
+        'Dokken Lee',
+        'El Rokys',
+        'El Milton',
+        'El Javys',
+        'El Milton',
+        'Humano',
+        'El Hector',
+        'Humano Desconocido'
+    );
+
 
     $data_email['confirmation_code'] = '200';
     $data_email['name'] = 'Hector Ponce';
 
-
+    $i = 0;
     foreach ($receivers as $user) {
-        Mail::send('mails.mail', $data_email, function($message) use ($user) {
-            $message->to($user)->subject('Incrementa tu ventos');
+        Mail::send('mails.mail', $data_email, function($message) use ($user, $names, $i) {
+            $message->to($user)->subject('Hola '.$names[$i].', prueba de campaña v2');
         });
+        $i++;
     }
 
     /*Mail::send('mails.mail', $data_email, function($message) use ($receivers) {
