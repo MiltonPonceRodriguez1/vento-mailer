@@ -36,7 +36,8 @@ Route::get('/mail', function () {
         'xxd39933@gmail.com',
         '2173034772@cua.uam.mx',
         '2173034709@cua.uam.mx',
-        'humano.qwert.1234@gmail.com'
+        'humano.qwert.1234@gmail.com',
+        '2163032024@cua.uam.mx'
     );
 
     $data_email['confirmation_code'] = '200';
@@ -45,7 +46,7 @@ Route::get('/mail', function () {
 
     foreach ($receivers as $user) {
         Mail::send('mails.mail', $data_email, function($message) use ($user) {
-            $message->to($user)->subject('Incendia tu camino con ventos');
+            $message->to($user)->subject('Incrementa tu ventos');
         });
     }
 

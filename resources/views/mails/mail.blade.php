@@ -243,7 +243,7 @@
         <table align="center" width="100%">
             <tr>
                 <td><p>
-                    <a href="https://vento.com/modules/email/fb"><img src="https://vento.com/modules/images/fb.png"></a>
+                    <a href="https://vento.com/modules/email/fb" ><img src="https://vento.com/modules/images/fb.png"></a>
                     <a href="https://vento.com/modules/email/ig"><img src="https://vento.com/modules/images/ig.png"></a>
                     <a href="https://vento.com/modules/email/tw"><img src="https://vento.com/modules/images/tw.png"></a>
                 </p></td>
@@ -278,6 +278,99 @@
     </div>
 
     <!--Header Web Fin-->
+
+    <div id="title">
+        <center>
+            <img src="https://vento.com/modules/images/despiertacaferacer.png">
+        </center>
+        
+        <p>Estrena hoy tu Vento ROCKETMAN CARRERA 250 con $11,000 de descuento en <a href="https://vento.com/"><b>www.vento.com</b></a></p>
+
+        <div class="btn" style="margin-top:30px;">
+            <p><a href="https://vento.com/rocketman-carrera-250/">QUIERO MÁS INFORMACIÓN</a></p>
+        </div>
+        <div class="btn" style="margin-top:30px;margin-bottom:30px;">
+            <p><a href="https://vento.com/modules/email/credit">DESCUBRE VENTOCREDIT</a></p>
+        </div>	
+    </div>
+
+    <div id="detalles">
+        <table>
+            <tr>
+                <td align="right" width="50">
+                    <img src="https://vento.com/modules/images/cilindrada.jpg" style="padding-top:30px;"></td><td colspan="2">
+                    <p align="left" style="font-size:35px;margin-left:10px;"><b>250 c.c.</b></p>
+                    <p align="left" style="margin-top:-45px;margin-left:10px;">Cilindrada</p>
+                </td>
+                <td rowspan="5">
+                    <p style="text-align:center;font-size:30px;"><b>360°</b></p>
+                    <center>
+                        <img src="https://vento.com/modules/images/rocketmancarrera250.gif" width="80%">
+                    </center>
+                    <p style="text-align:center;font-size:30px;">ROCKETMAN CARRERA 250</p>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" width="50">
+                    <img src="https://vento.com/modules/images/velocidadmaxima.jpg" style="padding-top:30px;">
+                </td>
+                <td colspan="2">
+                    <p align="left" style="font-size:35px;margin-left:10px;"><b>130 km/h</b></p>
+                    <p align="left" style="margin-left:10px;margin-top:-45px;">Velocidad Máxima</p>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" width="50">
+                    <img src="https://vento.com/modules/images/rendimiento.jpg" style="padding-top:30px;">
+                </td>
+                <td colspan="2">
+                    <p align="left" style="font-size:35px;margin-left:10px;"><b>30 km/l</b></p>
+                    <p align="left" style="margin-left:10px;margin-top:-45px;">Rendimiento</p>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" width="50">
+                    <img src="https://vento.com/modules/images/velocidades.jpg" style="padding-top:30px;">
+                </td>
+                <td colspan="2">
+                    <p align="left" style="font-size:35px;margin-left:10px;"><b>6</b></p>
+                    <p align="left" style="margin-left:10px;margin-top:-45px;">Velocidades</p>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" width="50">
+                    <img src="https://vento.com/modules/images/potenciamaxima.jpg" style="padding-top:30px;">
+                </td>
+                <td colspan="2">
+                    <p align="left" style="font-size:35px;margin-left:10px;"><b>18 HP</b></p>
+                    <p align="left" style="margin-left:10px;margin-top:-45px;">Potencia Máxima</p>
+                </td>
+            </tr>
+        </table>
+    </div><!--Termina detalles-->
+
+    <div id="detallesm">
+    <p style="text-align:center;font-size:30px;"><b>360°</b></p>	
+    <center><img src="https://vento.com/img/testingmailing/rocketmancarrera250.gif" width="100%"></center>	
+    <table align="center">
+    <tr>
+    <td width="50"><img src="https://vento.com/img/testingmailing/cilindrada.jpg" style="padding-top:30px;"></td><td colspan="2"><p align="left" style="font-size:35px;margin-left:10px;"><b>250 c.c.</b></p><p align="left" style="margin-top:-45px;margin-left:10px;">Cilindrada</p></td>
+    </tr>
+    <tr>
+    <td width="50"><img src="https://vento.com/img/testingmailing/velocidadmaxima.jpg" style="padding-top:30px;"></td><td colspan="2"><p align="left" style="font-size:35px;margin-left:10px;"><b>130 km/h</b></p><p align="left" style="margin-left:10px;margin-top:-45px;">Velocidad M&aacute;xima</p></td>
+    </tr>
+    <tr>
+    <td width="50"><img src="https://vento.com/img/testingmailing/rendimiento.jpg" style="padding-top:30px;"></td><td colspan="2"><p align="left" style="font-size:35px;margin-left:10px;"><b>30 km/l</b></p><p align="left" style="margin-left:10px;margin-top:-45px;">Rendimiento</p></td>
+    </tr>
+    <tr>
+    <td width="50"><img src="https://vento.com/img/testingmailing/velocidades.jpg" style="padding-top:30px;"></td><td colspan="2"><p align="left" style="font-size:35px;margin-left:10px;"><b>6</b></p><p align="left" style="margin-left:10px;margin-top:-45px;">Velocidades</p></td>
+    </tr>
+    <tr>
+    <td width="50"><img src="https://vento.com/img/testingmailing/potenciamaxima.jpg" style="padding-top:30px;"></td><td colspan="2"><p align="left" style="font-size:35px;margin-left:10px;"><b>18 HP</b></p><p align="left" style="margin-left:10px;margin-top:-45px;">Potencia M&aacute;xima</p></td>
+    </tr>
+    </table>
+
+    </div>
 
 
 
