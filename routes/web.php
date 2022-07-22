@@ -29,19 +29,21 @@ Route::get('/mail', function () {
         'aline.quintero.vna@gmail.com',
         'pamela.mvna@gmail.com',
         'rodrigo.ogme@gmail.com',
-        'hectorponce1im2@gmail.com'
+        'hectorponce1im2@gmail.com',
+        'moises.calderon@vnagroup.us'
     );
     
     $names = array(
-        'Milton Ponce Rodriguez',
-        'Javier Garcia Montes de Oca',
-        'Dokken Lee',
-        'Humano Desconocido',
-        'Sandra Arely González Toxqui',
-        'Aline Quintero Campos',
+        'Milton',
+        'Javier',
+        'Dokken',
+        'Humano',
+        'Sandra',
+        'Aline',
         'Pamela',
-        'Rodrigo Larrañaga',
-        'Hector Ponce'
+        'Rodrigo',
+        'Hector',
+        'Moy'
     );*/
 
     $receivers = array(
@@ -55,21 +57,23 @@ Route::get('/mail', function () {
         '2173034709@cua.uam.mx',
         'humano.qwert.1234@gmail.com',
         '2163032024@cua.uam.mx',
-        'humano.humano.0910@gmail.com'
+        'humano.humano.0910@gmail.com',
+        'sweet_roses197@hotmail.com'
     );
 
     $names = array(
-        'Milton Ponce Rodriguez',
-        'Javier Garcia Montes de Oca',
+        'Milton',
+        'Javier',
         'JaviDende',
-        'Dokken Lee',
-        'El Rokys',
-        'El Milton',
-        'El Javys',
-        'El Milton',
+        'Dokken',
+        'Rokys',
+        'Milton',
+        'Javys',
+        'Milton',
         'Humano',
-        'El Hector',
-        'Humano Desconocido'
+        'Hector',
+        'Humano Desconocido',
+        'Hector'
     );
 
     $data_email['home'] = "https://vento.com/";
@@ -105,7 +109,7 @@ Route::get('/mail', function () {
     $i = 0;
     foreach ($receivers as $user) {
         Mail::send('mails.mail', $data_email, function($message) use ($user, $names, $i) {
-            $message->to($user)->subject($names[$i].', estrena tu nueva moto');
+            $message->to($user)->subject('Hello '.$names[$i].' Mira la prueba de subject personalizado.');
         });
         $i++;
     }
