@@ -242,22 +242,22 @@
     <div id="header">
         <table align="center">
             <tr>
-            <td><p><a href="{{$home}}"><img src="https://vento.com/modules/images/ventologo.png"></a></p></td>
+            <td><p><a href="{{$home}}"><img src="https://vento.com/mailing/main/ventologo.png"></a></p></td>
             </tr>	
         </table>
 
         <table align="center" width="100%">
             <tr>
                 <td><p>
-                    <a href="https://vento.com/modules/email/fb" ><img src="https://vento.com/modules/images/fb.png"></a>
-                    <a href="https://vento.com/modules/email/ig"><img src="https://vento.com/modules/images/ig.png"></a>
-                    <a href="https://vento.com/modules/email/tw"><img src="https://vento.com/modules/images/tw.png"></a>
+                    <a href="https://vento.com/mailing/redirect/fb" ><img src="https://vento.com/mailing/main/fb.png"></a>
+                    <a href="https://vento.com/mailing/redirect/ig"><img src="https://vento.com/mailing/main/ig.png"></a>
+                    <a href="https://vento.com/mailing/redirect/tw"><img src="https://vento.com/mailing/main/tw.png"></a>
                 </p></td>
                 <td><p><a href="https://vento.com/tienda/">MODELOS</a></p></td>
                 <td><p><a href="https://vento.com/agencias/">AGENCIAS</a></p></td>
                 <td><p><a href="https://ventorefacciones.com/">REFACCIONES</a></p></td>
                 <td><p><a href="https://vento.com/blog/">BLOG</a></p></td>
-                <td><p><a href="https://vento.com/tienda/"><img src="https://vento.com/modules/images/shop.png"></a></p></td>
+                <td><p><a href="https://vento.com/tienda/"><img src="https://vento.com/mailing/main/shop.png"></a></p></td>
             </tr>
         </table>
     </div>
@@ -266,7 +266,7 @@
     <div id="headerm">
         <table align="center" width="100%">
             <tr>
-                <td><p><a href="{{$home}}"><img src="https://vento.com/modules/images/ventologo.png"></a></p></td>
+                <td><p><a href="{{$home}}"><img src="https://vento.com/mailing/main/ventologo.png"></a></p></td>
             </tr>
         </table>
     </div>
@@ -284,16 +284,16 @@
 
     <div id="title">
         <center>
-            <img src="https://vento.com/modules/images/despiertacaferacer.png">
+            <img src="{{$logo_moto}}">
         </center>
         
-        <p>Estrena hoy tu Vento ROCKETMAN CARRERA 250 con $11,000 de descuento en <a href="{{$home}}"><b>www.vento.com</b></a></p>
+        <p>Estrena hoy tu Vento {{$moto_model}} con {{$discount}} de descuento en <a href="{{$home}}"><b>www.vento.com</b></a></p>
 
         <div class="btn" style="margin-top:30px;">
             <p><a href="{{$content_href}}">QUIERO MÁS INFORMACIÓN</a></p>
         </div>
         <div class="btn" style="margin-top:30px;margin-bottom:30px;">
-            <p><a href="https://vento.com/modules/email/credit">DESCUBRE VENTOCREDIT</a></p>
+            <p><a href="https://vento.com/mailing/redirect/credit">DESCUBRE VENTOCREDIT</a></p>
         </div>	
     </div>
 
@@ -301,53 +301,53 @@
         <table>
             <tr>
                 <td align="right" width="50">
-                    <img src="https://vento.com/modules/images/cilindrada.jpg" style="padding-top:30px;"></td><td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>250 c.c.</b></p>
+                    <img src="https://vento.com/mailing/main/cilindrada.jpg" style="padding-top:30px;"></td><td colspan="2">
+                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$cilindrada}}</b></p>
                     <p align="left" style="margin-top:-45px;margin-left:10px;">Cilindrada</p>
                 </td>
                 <td rowspan="5">
                     <p style="text-align:center;font-size:30px;"><b>360°</b></p>
-                    <a href="https://vento.com/planes-rocketman-carrera-250/">
+                    <a href="{{$planes}}">
                         <center>
-                            <img src="https://vento.com/modules/images/rcarrera250.gif" width="80%">
+                            <img src="{{$img_360}}" width="80%">
                         </center>
                     </a>
-                    <p style="text-align:center;font-size:30px;">ROCKETMAN CARRERA 250</p>
+                    <p style="text-align:center;font-size:30px;">{{$moto_model}}</p>
                 </td>
             </tr>
             <tr>
                 <td align="right" width="50">
-                    <img src="https://vento.com/modules/images/velocidadmaxima.jpg" style="padding-top:30px;">
+                    <img src="https://vento.com/mailing/main/velocidadmaxima.jpg" style="padding-top:30px;">
                 </td>
                 <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>130 km/h</b></p>
+                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$vel_max}}</b></p>
                     <p align="left" style="margin-left:10px;margin-top:-45px;">Velocidad Máxima</p>
                 </td>
             </tr>
             <tr>
                 <td align="right" width="50">
-                    <img src="https://vento.com/modules/images/rendimiento.jpg" style="padding-top:30px;">
+                    <img src="https://vento.com/mailing/main/rendimiento.jpg" style="padding-top:30px;">
                 </td>
                 <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>30 km/l</b></p>
+                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$rendimiento}}</b></p>
                     <p align="left" style="margin-left:10px;margin-top:-45px;">Rendimiento</p>
                 </td>
             </tr>
             <tr>
                 <td align="right" width="50">
-                    <img src="https://vento.com/modules/images/velocidades.jpg" style="padding-top:30px;">
+                    <img src="https://vento.com/mailing/main/velocidades.jpg" style="padding-top:30px;">
                 </td>
                 <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>6</b></p>
+                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$velocidades}}</b></p>
                     <p align="left" style="margin-left:10px;margin-top:-45px;">Velocidades</p>
                 </td>
             </tr>
             <tr>
                 <td align="right" width="50">
-                    <img src="https://vento.com/modules/images/potenciamaxima.jpg" style="padding-top:30px;">
+                    <img src="https://vento.com/mailing/main/potenciamaxima.jpg" style="padding-top:30px;">
                 </td>
                 <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>18 HP</b></p>
+                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$potencia}}</b></p>
                     <p align="left" style="margin-left:10px;margin-top:-45px;">Potencia Máxima</p>
                 </td>
             </tr>
@@ -356,55 +356,55 @@
 
     <div id="detallesm">
         <p style="text-align:center;font-size:30px;"><b>360°</b></p>	
-        <a href="https://vento.com/planes-rocketman-carrera-250/">
+        <a href="{{$planes}}">
             <center>
-                <img src="https://vento.com/modules/images/rcarrera250.gif" width="100%">
+                <img src="{{$img_360}}" width="100%">
             </center>
         </a>
         <table align="center">
             <tr>
                 <td width="50">
-                    <img src="https://vento.com/modules/images/cilindrada.jpg" style="padding-top:30px;">
+                    <img src="https://vento.com/mailing/main/cilindrada.jpg" style="padding-top:30px;">
                 </td>
                 <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>250 c.c.</b></p>
+                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$cilindrada}}</b></p>
                     <p align="left" style="margin-top:-45px;margin-left:10px;">Cilindrada</p>
                 </td>
             </tr>
             <tr>
                 <td width="50">
-                    <img src="https://vento.com/modules/images/velocidadmaxima.jpg" style="padding-top:30px;">
+                    <img src="https://vento.com/mailing/main/velocidadmaxima.jpg" style="padding-top:30px;">
                 </td>
                 <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>130 km/h</b></p>
+                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$vel_max}}</b></p>
                     <p align="left" style="margin-left:10px;margin-top:-45px;">Velocidad Máxima</p>
                 </td>
             </tr>
             <tr>
                 <td width="50">
-                    <img src="https://vento.com/modules/images/rendimiento.jpg" style="padding-top:30px;">
+                    <img src="https://vento.com/mailing/main/rendimiento.jpg" style="padding-top:30px;">
                 </td>
                 <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>30 km/l</b></p>
+                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$rendimiento}}</b></p>
                     <p align="left" style="margin-left:10px;margin-top:-45px;">Rendimiento</p>
                 </td>
             </tr>
             <tr>
                 <td width="50">
-                    <img src="https://vento.com/modules/images/velocidades.jpg" style="padding-top:30px;">
+                    <img src="https://vento.com/mailing/main/velocidades.jpg" style="padding-top:30px;">
                 </td>
                 <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>6</b></p>
+                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$velocidades}}</b></p>
                     <p align="left" style="margin-left:10px;margin-top:-45px;">Velocidades</p>
                 </td>
             </tr>
             <tr>
                 <td width="50">
-                    <img src="https://vento.com/modules/images/potenciamaxima.jpg" style="padding-top:30px;">
+                    <img src="https://vento.com/mailing/main/potenciamaxima.jpg" style="padding-top:30px;">
                 </td>
                 <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>18 HP</b></p>
-                    <p align="left" style="margin-left:10px;margin-top:-45px;">Potencia M&aacute;xima</p>
+                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$potencia}}</b></p>
+                    <p align="left" style="margin-left:10px;margin-top:-45px;">Potencia Máxima</p>
                 </td>
             </tr>
         </table>
@@ -416,23 +416,23 @@
                 CONOCE MÁS
             </p>	
             <div class="opcionver">
-                <a href="https://vento.com/rocketman-racing-250/">
+                <a href="{{$reccomend_1_hrf}}">
                     <center>
-                        <img src="https://vento.com/modules/images/link1.jpg" width="90%">
+                        <img src="{{$reccomend_1_src}}" width="90%">
                     </center>
                 </a>	
             </div>
             <div class="opcionver">
-                <a href="https://vento.com/rocketman-sport-250/">
+                <a href="{{$reccomend_2_hrf}}">
                     <center>
-                        <img src="https://vento.com/modules/images/link2.jpg" width="90%">
+                        <img src="{{$reccomend_2_src}}" width="90%">
                     </center>
                 </a>	
             </div>
             <div class="opcionver">
-                <a href="https://vento.com/screamer-sportivo-250/">
+                <a href="{{$reccomend_3_hrf}}">
                     <center>
-                        <img src="https://vento.com/modules/images/link3.jpg" width="90%">
+                        <img src="{{$reccomend_3_src}}" width="90%">
                     </center>
                 </a>
             </div>
@@ -443,7 +443,7 @@
         <div id="footercontent">	
             <a href="{{$home}}">
                 <center>
-                    <img src="https://vento.com/modules/images/ventologo.png">
+                    <img src="https://vento.com/mailing/main/ventologo.png">
                 </center>
             </a>
             <p align="center">

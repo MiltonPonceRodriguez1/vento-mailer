@@ -24,11 +24,12 @@ Route::get('/mail', function () {
         'miltonponceipn@gmail.com',
         'ja.1999.ga@gmail.com',
         'xxd39933@gmail.com',
-        'humano.qwert.1234@gmail.com',
+        'humano.humano.0910@gmail.com',
         'toxquisandra@gmail.com',
         'aline.quintero.vna@gmail.com',
         'pamela.mvna@gmail.com',
-        'rodrigo.ogme@gmail.com'
+        'rodrigo.ogme@gmail.com',
+        'hectorponce1im2@gmail.com'
     );
     
     $names = array(
@@ -39,7 +40,8 @@ Route::get('/mail', function () {
         'Sandra Arely González Toxqui',
         'Aline Quintero Campos',
         'Pamela',
-        'Rodrigo Larrañaga'
+        'Rodrigo Larrañaga',
+        'Hector Ponce'
     );*/
 
     $receivers = array(
@@ -72,15 +74,38 @@ Route::get('/mail', function () {
 
     $data_email['home'] = "https://vento.com/";
 
-    /* LINK AND IMG FROM CONTENT */
     $data_email['content_href'] = "https://vento.com/rocketman-carrera-250/";
-    $data_email['content_src'] = "https://vento.com/modules/images/main.gif";
+    $data_email['content_src'] = "https://vento.com/mailing/content/main.gif";
+
+    $data_email['moto_model'] = "ROCKETMAN CARRERA 250";
+    $data_email['discount'] = "$11,000";
+
+    $data_email['logo_moto'] = "https://vento.com/mailing/content/despiertacaferacer.png";
+
+    $data_email['planes'] = "https://vento.com/planes-rocketman-carrera-250/";
+    $data_email['img_360'] = "https://vento.com/mailing/content/rcarrera250.gif";
+
+    // ESPECIFICACIONES
+    $data_email['cilindrada'] = "250 c.c.";
+    $data_email['vel_max'] = "130 km/h";
+    $data_email['rendimiento'] = "30 km/l";
+    $data_email['velocidades'] = "6";
+    $data_email['potencia'] = "18 HP";
+
+    $data_email['reccomend_1_hrf'] = "https://vento.com/rocketman-racing-250/";
+    $data_email['reccomend_1_src'] = "https://vento.com/mailing/recommend/link1.jpg";
+
+    $data_email['reccomend_2_hrf'] = "https://vento.com/rocketman-sport-250/";
+    $data_email['reccomend_2_src'] = "https://vento.com/mailing/recommend/link2.jpg";
+
+    $data_email['reccomend_3_hrf'] = "https://vento.com/screamer-sportivo-250/";
+    $data_email['reccomend_3_src'] = "https://vento.com/mailing/recommend/link3.jpg";
 
 
     $i = 0;
     foreach ($receivers as $user) {
         Mail::send('mails.mail', $data_email, function($message) use ($user, $names, $i) {
-            $message->to($user)->subject('Mundo '.$names[$i]);
+            $message->to($user)->subject($names[$i].', estrena tu nueva moto');
         });
         $i++;
     }
