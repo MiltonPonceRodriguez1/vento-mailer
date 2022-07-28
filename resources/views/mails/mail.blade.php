@@ -2,14 +2,10 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Saira">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventos Templete</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Saira" rel="stylesheet" type="text/css">
+    <title>Marketing</title>
 
     <style type="text/css">
         html {
@@ -26,15 +22,10 @@
             font-family: 'Saira', sans-serif;
         }
 
-        #content {
-            background-color: #000000;
-        }
-
         #header {
-            width: 100%;
             background-color: #000000;
-            display: flex;
-            align-items: center;
+            padding-bottom: 20px;
+            padding-top: 20px;
         }
 
         #header p {
@@ -43,6 +34,9 @@
             font-style: italic;
             font-weight: 700;
             text-align: center;
+            margin: 0px;
+            padding: 0px;
+            align-items: center;
         }
 
         #header a {
@@ -51,27 +45,58 @@
         }
 
         #headerm {
-            width: 100%;
             background-color: #000000;
-            display: flex;
-            align-items: center;
         }
 
-        #headerm p {
+        #content {
+            background-color: #000000;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #content img {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #title p {
             color: #ffffff;
-            font-size: 25px;
-            font-style: italic;
-            font-weight: 700;
             text-align: center;
+            font-style: italic;
+            font-size: 20px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        #headerm a {
+        #title {
+            background-color: #000000;
+            padding-bottom: 30px;
+            padding-top: 30px;
+        }
+
+        #title a {
             text-decoration: none;
             color: #ffffff;
+            font-weight: 500 !important;
+            font-style: normal;
+        }
+
+        #detalles {
+            background-color: #ffffff;
+            padding-top: 30px;
+            padding-bottom: 30px;
         }
 
         #detalles table p {
-            line-height: 35px;
+            margin: auto;
+        }
+
+        #detallesm table p {
+            margin: auto;
+        }
+
+        #detalles p {
+            margin: 0px;
         }
 
         #contenedorvermas {
@@ -90,8 +115,7 @@
 
         #footer {
             width: 100%;
-            background: rgb(38, 41, 46);
-            background: linear-gradient(180deg, rgba(38, 41, 46, 1) 0%, rgba(59, 62, 69, 1) 100%);
+            background-color: #1c1d1d;
         }
 
         #footercontent {
@@ -99,21 +123,8 @@
             padding-bottom: 20px;
         }
 
-        #footercontent a {
-            color: #ffffff;
-            font-size: 18px;
-            text-align: center;
-            text-decoration: none;
-        }
 
-        #footercontent p {
-            color: #ffffff;
-            font-size: 18px;
-            text-align: center;
-            text-decoration: none;
-        }
-
-        @media only screen and (min-width:970px) {
+        @media only screen and (min-width:768px) {
             #header {
                 display: block;
             }
@@ -126,24 +137,16 @@
                 width: 50%;
             }
 
-            .btn {
-                display: flex;
-                align-items: center;
-                background-color: #297a05;
-                width: 30%;
-                margin-left: auto;
-                margin-right: auto;
-                border-radius: 15px;
+            #botones {
+                display: block;
             }
 
-            .btn a {
-                color: #ffffff;
-                font-size: 30px;
-                text-align: center;
+            #botonesm {
+                display: none;
             }
 
             #detalles {
-                width: 70%;
+                width: 90%;
                 margin-left: auto;
                 margin-right: auto;
             }
@@ -165,35 +168,41 @@
                 width: 33%;
             }
 
-        }
-
-        @media only screen and (max-width:969px) {
-            #header {
-                display: none;
+            #footercontent a {
+                color: #ffffff;
+                font-size: 18px;
+                text-align: center;
+                text-decoration: none;
             }
 
+            #footercontent p {
+                color: #ffffff;
+                font-size: 18px;
+                text-align: center;
+                text-decoration: none;
+            }
+
+        }
+
+        @media only screen and (max-width:767px) {
             #headerm {
                 display: block;
+            }
+
+            #header {
+                display: none;
             }
 
             #title img {
                 width: 80%;
             }
 
-            .btn {
-                display: flex;
-                align-items: center;
-                background-color: #297a05;
-                width: 50%;
-                margin-left: auto;
-                margin-right: auto;
-                border-radius: 15px;
+            #botones {
+                display: none;
             }
 
-            .btn a {
-                color: #ffffff;
-                font-size: 20px;
-                text-align: center;
+            #botonesm {
+                display: block;
             }
 
             #detalles {
@@ -208,31 +217,28 @@
                 display: inline-block;
                 width: 100%;
             }
-        }
 
-        #title p {
-            color: #ffffff;
-            text-align: center;
-            font-style: italic;
-            font-size: 20px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+            #footercontent a {
+                color: #ffffff;
+                font-size: 12px;
+                text-align: center;
+                text-decoration: none;
+            }
 
-        #title {
-            background-color: #000000;
-            padding-bottom: 30px;
-        }
+            #footercontent p {
+                color: #ffffff;
+                font-size: 12px;
+                text-align: center;
+                text-decoration: none;
+            }
 
-        #title a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 500 !important;
-            font-style: normal;
+            #title {
+                padding-right: 10px;
+                padding-left: 10px;
+            }
         }
 
     </style>
-
 </head>
 
 <body>
@@ -242,38 +248,49 @@
     <div id="header">
         <table align="center">
             <tr>
-            <td><p><a href="{{$home}}"><img src="https://vento.com/mailing/main/ventologo.png"></a></p></td>
-            </tr>	
+                <td>
+                    <p><a href="{{$home}}"><img src="https://vento.com/mailing/main/ventologo.png"></a></p>
+                </td>
+            </tr>
         </table>
 
         <table align="center" width="100%">
             <tr>
-                <td><p>
-                    <a href="https://vento.com/mailing/redirect/fb" ><img src="https://vento.com/mailing/main/fb.png"></a>
-                    <a href="https://vento.com/mailing/redirect/ig"><img src="https://vento.com/mailing/main/ig.png"></a>
-                    <a href="https://vento.com/mailing/redirect/tw"><img src="https://vento.com/mailing/main/tw.png"></a>
-                </p></td>
-                <td><p><a href="https://vento.com/tienda/">MODELOS</a></p></td>
-                <td><p><a href="https://vento.com/agencias/">AGENCIAS</a></p></td>
-                <td><p><a href="https://ventorefacciones.com/">REFACCIONES</a></p></td>
-                <td><p><a href="https://vento.com/blog/">BLOG</a></p></td>
-                <td><p><a href="https://vento.com/tienda/"><img src="https://vento.com/mailing/main/shop.png"></a></p></td>
+                <td align="center">
+                    <p>
+                        <a href="https://vento.com/mailing/redirect/fb"><img src="https://vento.com/mailing/main/fb.png"></a>
+                        <a href="https://vento.com/mailing/redirect/ig"><img src="https://vento.com/mailing/main/ig.png"></a>
+                        <a href="https://vento.com/mailing/redirect/tw"><img src="https://vento.com/mailing/main/tw.png"></a>
+                    </p>
+                </td>
+                <td align="center">
+                    <p><a href="https://vento.com/tienda/">MODELOS</a></p>
+                </td>
+                <td align="center">
+                    <p><a href="https://vento.com/agencias/">AGENCIAS</a></p>
+                </td>
+                <td align="center">
+                    <p><a href="https://ventorefacciones.com/">REFACCIONES</a></p>
+                </td>
+                <td align="center">
+                    <p><a href="https://vento.com/blog/">BLOG</a></p>
+                </td>
             </tr>
         </table>
     </div>
     <!--Header Web Fin-->
-
+    
+    
+    <!--Header Mobile-->
     <div id="headerm">
-        <table align="center" width="100%">
-            <tr>
-                <td><p><a href="{{$home}}"><img src="https://vento.com/mailing/main/ventologo.png"></a></p></td>
-            </tr>
-        </table>
-    </div>
-
+		<a href="{{$home}}">
+			<center><img src="https://vento.com/mailing/main/headerm.jpg" width="100%"></center>
+		</a>
+	</div>
+    <!--Header Mobile Fin-->
 
     
-
+    <!--Comienza Content-->
     <div id="content">
         <a href="{{$content_href}}" target="_blank">
             <center>
@@ -281,179 +298,266 @@
             </center>
         </a>
     </div>
-
+    <!--Termina Content-->
+    
+	
+    <!--Comienza Title-->
     <div id="title">
         <center>
             <img src="{{$logo_moto}}">
         </center>
-        
+
         <p>Estrena hoy tu Vento {{$moto_model}} con {{$discount}} de descuento en <a href="{{$home}}"><b>www.vento.com</b></a></p>
 
-        <div class="btn" style="margin-top:30px;">
+        <!--<div class="btn" style="margin-top:30px;">
             <p><a href="{{$content_href}}">QUIERO MÁS INFORMACIÓN</a></p>
         </div>
         <div class="btn" style="margin-top:30px;margin-bottom:30px;">
             <p><a href="https://vento.com/mailing/redirect/credit">DESCUBRE VENTOCREDIT</a></p>
-        </div>	
-    </div>
+        </div>-->
 
+        <div id="botones">
+			<table align="center" width="100%">
+				<tr>
+					<td>
+                        <a href="{{$content_href}}">
+							<center>
+                                <img src="https://vento.com/mailing/main/btninfo.png">
+                            </center>
+						</a>
+                    </td>
+					<td>
+                        <a href="https://vento.com/mailing/redirect/credit/">
+							<center>
+                                <img src="https://vento.com/mailing/main/btncredit.png">
+							</center>
+						</a>
+                    </td>
+				</tr>
+			</table>
+		</div>
+
+        <!--Comienza Botonesm-->
+		<div id="botonesm">
+			<table align="center" width="100%">
+				<tr>
+					<td>
+                        <a href="{{$content_href}}">
+							<center>
+                                <img src="https://vento.com/mailing/main/btninfo.png" style="margin-bottom:20px;">
+                            </center>
+						</a>
+                    </td>
+				</tr>
+				<tr>
+					<td>
+                        <a href="https://vento.com/mailing/redirect/credit/">
+							<center>
+                                <img src="https://vento.com/mailing/main/btncredit.png">
+                            </center>
+						</a>
+                    </td>
+				</tr>
+			</table>
+		</div>
+		<!--Termina Botonesm-->
+    </div>
+    <!--Termina Title-->
+    
+
+
+
+    <!--Comienza Detalles-->
     <div id="detalles">
-        <table>
-            <tr>
-                <td align="right" width="50">
-                    <img src="https://vento.com/mailing/main/cilindrada.jpg" style="padding-top:30px;"></td><td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$cilindrada}}</b></p>
-                    <p align="left" style="margin-top:-45px;margin-left:10px;">Cilindrada</p>
-                </td>
-                <td rowspan="5">
-                    <p style="text-align:center;font-size:30px;"><b>360°</b></p>
-                    <a href="{{$planes}}">
-                        <center>
-                            <img src="{{$img_360}}" width="80%">
-                        </center>
-                    </a>
-                    <p style="text-align:center;font-size:30px;">{{$moto_model}}</p>
-                </td>
-            </tr>
-            <tr>
-                <td align="right" width="50">
-                    <img src="https://vento.com/mailing/main/velocidadmaxima.jpg" style="padding-top:30px;">
-                </td>
-                <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$vel_max}}</b></p>
-                    <p align="left" style="margin-left:10px;margin-top:-45px;">Velocidad Máxima</p>
-                </td>
-            </tr>
-            <tr>
-                <td align="right" width="50">
-                    <img src="https://vento.com/mailing/main/rendimiento.jpg" style="padding-top:30px;">
-                </td>
-                <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$rendimiento}}</b></p>
-                    <p align="left" style="margin-left:10px;margin-top:-45px;">Rendimiento</p>
-                </td>
-            </tr>
-            <tr>
-                <td align="right" width="50">
-                    <img src="https://vento.com/mailing/main/velocidades.jpg" style="padding-top:30px;">
-                </td>
-                <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$velocidades}}</b></p>
-                    <p align="left" style="margin-left:10px;margin-top:-45px;">Velocidades</p>
-                </td>
-            </tr>
-            <tr>
-                <td align="right" width="50">
-                    <img src="https://vento.com/mailing/main/potenciamaxima.jpg" style="padding-top:30px;">
-                </td>
-                <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$potencia}}</b></p>
-                    <p align="left" style="margin-left:10px;margin-top:-45px;">Potencia Máxima</p>
-                </td>
-            </tr>
-        </table>
-    </div><!--Termina detalles-->
+		<p style="text-align:center;font-size:25px;"><b>360°</b></p>
+
+		<a href="{{$planes}}">
+			<center>
+                <img src="{{$img_360}}" style="margin-top:20px;">
+            </center>
+		</a>
+
+		<table style="margin-top:20px;" align="center">
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td colspan="2"><img src="https://vento.com/mailing/main/cilindrada.jpg"></td>
+							<td>
+								<p align="left" style="font-size:25px;line-height:25px;"><b>{{$cilindrada}}</b></p>
+								<p align="left">Cilindrada</p>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table>
+						<tr>
+							<td colspan="2"><img src="https://vento.com/mailing/main/velocidadmaxima.jpg">
+							</td>
+							<td>
+								<p align="left" style="font-size:25px;line-height:25px;"><b>{{$vel_max}}</b></p>
+								<p align="left">Velocidad Máxima</p>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table>
+						<tr>
+							<td colspan="2"><img src="https://vento.com/mailing/main/rendimiento.jpg"></td>
+							<td>
+								<p align="left" style="font-size:25px;line-height:25px;"><b>{{$rendimiento}}</b></p>
+								<p align="left">Rendimiento</p>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table>
+						<tr>
+							<td colspan="2"><img src="https://vento.com/mailing/main/velocidades.jpg"></td>
+							<td>
+								<p align="left" style="font-size:25px;line-height:25px;"><b>{{$velocidades}}</b></p>
+								<p align="left">Velocidades</p>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table>
+						<tr>
+							<td colspan="2"><img src="https://vento.com/mailing/main/potenciamaxima.jpg"></td>
+							<td>
+								<p align="left" style="font-size:25px;line-height:25px;"><b>{{$potencia}}</b></p>
+								<p align="left">Potencia Máxima</p>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+    <!--Termina Detalles-->
+
+
+    <!--------     ME QUEDE AQUI XD -------------->
+
 
     <div id="detallesm">
-        <p style="text-align:center;font-size:30px;"><b>360°</b></p>	
-        <a href="{{$planes}}">
-            <center>
-                <img src="{{$img_360}}" width="100%">
-            </center>
-        </a>
-        <table align="center">
-            <tr>
-                <td width="50">
-                    <img src="https://vento.com/mailing/main/cilindrada.jpg" style="padding-top:30px;">
-                </td>
-                <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$cilindrada}}</b></p>
-                    <p align="left" style="margin-top:-45px;margin-left:10px;">Cilindrada</p>
-                </td>
-            </tr>
-            <tr>
-                <td width="50">
-                    <img src="https://vento.com/mailing/main/velocidadmaxima.jpg" style="padding-top:30px;">
-                </td>
-                <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$vel_max}}</b></p>
-                    <p align="left" style="margin-left:10px;margin-top:-45px;">Velocidad Máxima</p>
-                </td>
-            </tr>
-            <tr>
-                <td width="50">
-                    <img src="https://vento.com/mailing/main/rendimiento.jpg" style="padding-top:30px;">
-                </td>
-                <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$rendimiento}}</b></p>
-                    <p align="left" style="margin-left:10px;margin-top:-45px;">Rendimiento</p>
-                </td>
-            </tr>
-            <tr>
-                <td width="50">
-                    <img src="https://vento.com/mailing/main/velocidades.jpg" style="padding-top:30px;">
-                </td>
-                <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$velocidades}}</b></p>
-                    <p align="left" style="margin-left:10px;margin-top:-45px;">Velocidades</p>
-                </td>
-            </tr>
-            <tr>
-                <td width="50">
-                    <img src="https://vento.com/mailing/main/potenciamaxima.jpg" style="padding-top:30px;">
-                </td>
-                <td colspan="2">
-                    <p align="left" style="font-size:35px;margin-left:10px;"><b>{{$potencia}}</b></p>
-                    <p align="left" style="margin-left:10px;margin-top:-45px;">Potencia Máxima</p>
-                </td>
-            </tr>
-        </table>
-    </div>
-    
-    <div id="vermas">
+		<p style="text-align:center;font-size:25px;"><b>360°</b></p>
+		<a href="{{$planes}}">
+			<center><img src="{{$img_360}}"></center>
+		</a>
+		<table align="center" style="margin-top:20px;">
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td colspan="2"><img src="https://vento.com/mailing/main/cilindrada.jpg"></td>
+							<td>
+								<p align="left" style="font-size:25px;line-height:25px;"><b>{{$cilindrada}}</b></p>
+								<p align="left">Cilindrada</p>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td colspan="2"><img src="https://vento.com/mailing/main/velocidadmaxima.jpg">
+							</td>
+							<td>
+								<p align="left" style="font-size:25px;line-height:25px;"><b>{{$vel_max}}</b></p>
+								<p align="left">Velocidad Máxima</p>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td colspan="2"><img src="https://vento.com/mailing/main/rendimiento.jpg"></td>
+							<td>
+								<p align="left" style="font-size:25px;line-height:25px;"><b>{{$rendimiento}}</b></p>
+								<p align="left">Rendimiento</p>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td colspan="2"><img src="https://vento.com/mailing/main/velocidades.jpg"></td>
+							<td>
+								<p align="left" style="font-size:25px;line-height:25px;"><b>{{$velocidades}}</b></p>
+								<p align="left">Velocidades</p>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td colspan="2"><img src="https://vento.com/mailing/main/potenciamaxima.jpg"></td>
+							<td>
+								<p align="left" style="font-size:25px;line-height:25px;"><b>{{$potencia}}</b></p>
+								<p align="left">Potencia Máxima</p>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+
+    <div id="vermas" style="background-color:#000000;">
         <div id="contenedorvermas">
-            <p style="text-align:center;font-size:35px;color:#ffffff;line-height:35px;padding-top:40px;font-style:italic;">
-                CONOCE MÁS
-            </p>	
+            <p style="text-align:center;font-size:25px;color:#ffffff;padding-top:30px;">
+                <i>CONOCE MÁS</i>
+            </p>
             <div class="opcionver">
                 <a href="{{$reccomend_1_hrf}}">
-                    <center>
-                        <img src="{{$reccomend_1_src}}" width="90%">
-                    </center>
-                </a>	
+                    <center><img src="{{$reccomend_1_src}}" width="90%"></center>
+                </a>
             </div>
             <div class="opcionver">
                 <a href="{{$reccomend_2_hrf}}">
-                    <center>
-                        <img src="{{$reccomend_2_src}}" width="90%">
-                    </center>
-                </a>	
+                    <center><img src="{{$reccomend_2_src}}" width="90%"></center>
+                </a>
             </div>
             <div class="opcionver">
                 <a href="{{$reccomend_3_hrf}}">
-                    <center>
-                        <img src="{{$reccomend_3_src}}" width="90%">
-                    </center>
+                    <center><img src="{{$reccomend_3_src}}" width="90%"></center>
                 </a>
             </div>
         </div>
     </div>
 
-    <div id="footer">
-        <div id="footercontent">	
+    <div id="footer" style="background-color:#1c1d1d;">
+        <div id="footercontent">
             <a href="{{$home}}">
-                <center>
-                    <img src="https://vento.com/mailing/main/ventologo.png">
-                </center>
+                <center><img src="https://vento.com/mailing/main/ventologo.png"></center>
             </a>
-            <p align="center">
-                <a href="https://vento.com/politicas-de-envio/">Políticas de Envío</a> │ 
-                <a href="https://vento.com/aviso-de-privacidad/">Aviso de Privacidad</a> │ 
+            <!--<p align="center">
+                <a href="https://vento.com/politicas-de-envio/">Políticas de Envío</a> │
+                <a href="https://vento.com/aviso-de-privacidad/">Aviso de Privacidad</a> │
                 <a href="https://vento.com/terminos-y-condiciones/">Términos y Condiciones</a>
-            </p>
-            <p align="center">Teléfono: 55 6384-6600</p>
+            </p>-->
+            <p align="center" style="padding-top:30px;">Teléfono: 55 6384-6600</p>
             <p align="center">© 2022 Vento Motorcycles U.S.A</p>
         </div>
-    </div>	
+    </div>
 </body>
+
 </html>

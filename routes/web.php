@@ -46,7 +46,7 @@ Route::get('/mail', function () {
         'Moy'
     );*/
 
-    $receivers = array(
+    /*$receivers = array(
         'miltonponceipn@gmail.com',
         'ja.1999.ga@gmail.com',
         'javi.javier.gm@gmail.com',
@@ -74,6 +74,18 @@ Route::get('/mail', function () {
         'Hector',
         'Humano Desconocido',
         'Hector'
+    );*/
+
+    $receivers = array(
+        'miltonponceipn@gmail.com',
+        'xxd39933@gmail.com',
+        '2173034709@cua.uam.mx'
+    );
+
+    $names = array(
+        'Milton',
+        'Dokken',
+        'Humano'
     );
 
     $data_email['home'] = "https://vento.com/";
@@ -109,7 +121,7 @@ Route::get('/mail', function () {
     $i = 0;
     foreach ($receivers as $user) {
         Mail::send('mails.mail', $data_email, function($message) use ($user, $names, $i) {
-            $message->to($user)->subject('Hello '.$names[$i].' Mira la prueba de subject personalizado.');
+            $message->to($user)->subject('Hello '.$names[$i].', Despierta tu lado cafe racer xD');
         });
         $i++;
     }
