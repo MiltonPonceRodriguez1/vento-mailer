@@ -549,6 +549,11 @@
             <a href="{{$home}}">
                 <center><img src="https://vento.com/mailing/main/ventologo.png"></center>
             </a>
+
+            <p align="center">
+                <a href="https://vento.com/vento-mailer/public/unsubscribe/{{$TOKEN}}">unsubscribe</a> 
+            </p>
+
             <!--<p align="center">
                 <a href="https://vento.com/politicas-de-envio/">Políticas de Envío</a> │
                 <a href="https://vento.com/aviso-de-privacidad/">Aviso de Privacidad</a> │

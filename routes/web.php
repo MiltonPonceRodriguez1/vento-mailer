@@ -18,76 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/mail', function () {
-
-    /*$receivers = array(
-        'miltonponceipn@gmail.com',
-        'ja.1999.ga@gmail.com',
-        'xxd39933@gmail.com',
-        'humano.humano.0910@gmail.com',
-        'toxquisandra@gmail.com',
-        'aline.quintero.vna@gmail.com',
-        'pamela.mvna@gmail.com',
-        'rodrigo.ogme@gmail.com',
-        'hectorponce1im2@gmail.com',
-        'moises.calderon@vnagroup.us'
-    );
+Route::get('/send/{table?}', function ($table = "developers") {
     
-    $names = array(
-        'Milton',
-        'Javier',
-        'Dokken',
-        'Humano',
-        'Sandra',
-        'Aline',
-        'Pamela',
-        'Rodrigo',
-        'Hector',
-        'Moy'
-    );*/
-
-    /*$receivers = array(
-        'miltonponceipn@gmail.com',
-        'ja.1999.ga@gmail.com',
-        'javi.javier.gm@gmail.com',
-        'dokken.lee.99@gmail.com',
-        'javi.99.gmtz@gmail.com',
-        'xxd39933@gmail.com',
-        '2173034772@cua.uam.mx',
-        '2173034709@cua.uam.mx',
-        'humano.qwert.1234@gmail.com',
-        '2163032024@cua.uam.mx',
-        'humano.humano.0910@gmail.com',
-        'sweet_roses197@hotmail.com'
-    );
-
-    $names = array(
-        'Milton',
-        'Javier',
-        'JaviDende',
-        'Dokken',
-        'Rokys',
-        'Milton',
-        'Javys',
-        'Milton',
-        'Humano',
-        'Hector',
-        'Humano Desconocido',
-        'Hector'
-    );*/
-
-    $receivers = array(
-        'miltonponceipn@gmail.com',
-        'xxd39933@gmail.com',
-        '2173034709@cua.uam.mx'
-    );
-
-    $names = array(
-        'Milton',
-        'Dokken',
-        'Humano'
-    );
-
     $data_email['home'] = "https://vento.com/";
 
     $data_email['content_href'] = "https://vento.com/rocketman-carrera-250/";
@@ -118,13 +50,85 @@ Route::get('/mail', function () {
     $data_email['reccomend_3_src'] = "https://vento.com/mailing/recommend/link3.jpg";
 
 
-    $i = 0;
-    foreach ($receivers as $user) {
-        Mail::send('mails.mail', $data_email, function($message) use ($user, $names, $i) {
-            $message->to($user)->subject('Hello '.$names[$i].', Despierta tu lado cafe racer xD');
-        });
-        $i++;
+    try {
+        $users = DB::table($table)->get();
+    } catch (\Throwable $th) {
+        // echo $th;
+        // echo "<hr>";
+        echo "<center><h1 style='color: red;'>Error La Tabla No Existe</h1></center>";
+        die();
     }
 
-    return "<h1 style='text-align: center;'><span style='color: rgb(35, 111, 161); font-family: 'comic sans ms', sans-serif;'>CORREO ENVIADO CORRECTAMENTE</span></h1>";
+    if(count($users) < 12) {
+        for($i=0; $i < count($users); $i++) {
+            echo "<h3>".$users[$i]->NOMBRE." => ".$users[$i]->TOKEN."</h3>";
+        }
+    }
+
+    // $data_email['TOKEN'] = $users[$i]->TOKEN;
+
+    
+
+    for($i=0; $i < count($users); $i++) {
+        $data_email['TOKEN'] = $users[$i]->TOKEN;
+        Mail::send('mails.mail', $data_email, function($message) use ($users, $i) {
+            $message->to($users[$i]->EMAIL)->subject('Hello '.$users[$i]->NOMBRE.', nueva plantilla.');
+        });
+        // var_dump($data_email['TOKEN']);
+    }
+
+    return "<h1 style='text-align: center;'><span style='color: rgb(35, 111, 161); font-family: 'comic sans ms', sans-serif;'>CORREO ENVIADO CORRECTAMENTE</span></h1>";  
+
+});
+
+Route::get('/unsubscribe/{TOKEN}', function($TOKEN){
+    $data = array(
+        'code' => 400,
+        'status' => 'error',
+        'title' => 'Error al Cancelar la Suscripción!',
+        'subtitle' => 'Usuario no localizado.',
+        'color' => '#A51D2A'
+    );
+
+    // $users = DB::table('developers')->where('TOKEN', $TOKEN)->first();
+    // var_dump($users);die();
+    $response = DB::table('developers')->where('TOKEN', $TOKEN)->delete();
+
+    if($response > 0) {
+        $data = array(
+            'code' => 200,
+            'status' => 'success',
+            'title' => 'Suscripción Cancelada Correctamente!',
+            'subtitle' => 'Esperamos te arrepientas xD, SALUDOTES',
+            'color' => '#208637'
+        );
+    }
+
+    return view('unsubscribe', array(
+        'data' => $data
+    ));
+
+    // return $data;
+});
+
+Route::get('/pruebas/{name?}', function($name = null){
+    $text = '<h2>Texto desde una ruta !!</h2>';
+    $text .= 'Nombre: '.$name;
+
+
+    
+    echo $text;
+});
+
+Route::get('/db', function(){
+    $servername = "localhost";
+	$username = "vento_hector";
+	$password = "Dokkenxbox360";
+	try {
+		$conn = new PDO("mysql:host=$servername;dbname=vento_wp341981", $username, $password);
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                echo "Conexión Success";
+	} catch(PDOException $e) {
+		echo "Conexión Failed";
+	}
 });
