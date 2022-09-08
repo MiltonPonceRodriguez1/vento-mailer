@@ -249,7 +249,7 @@
         <table align="center">
             <tr>
                 <td>
-                    <p><a href="{{$home}}"><img src="https://vento.com/mailing/main/ventologo.png"></a></p>
+                    <p><a href="https://vento.com/"><img src="https://vento.com/mailing/main/ventologo.png"></a></p>
                 </td>
             </tr>
         </table>
@@ -283,7 +283,7 @@
     
     <!--Header Mobile-->
     <div id="headerm">
-		<a href="{{$home}}">
+		<a href="https://vento.com/">
 			<center><img src="https://vento.com/mailing/main/headerm.jpg" width="100%"></center>
 		</a>
 	</div>
@@ -294,7 +294,7 @@
     <div id="content">
         <a href="{{$content_href}}" target="_blank">
             <center>
-                <img src="{{$content_src}}" width="100%">
+                <img src="https://vento.com/mailing/content/{{$date}}/encabezado-{{$date}}.gif" width="100%">
             </center>
         </a>
     </div>
@@ -304,10 +304,10 @@
     <!--Comienza Title-->
     <div id="title">
         <center>
-            <img src="{{$logo_moto}}">
+            <img src="https://vento.com/mailing/content/{{$date}}/slogan-{{$date}}.png">
         </center>
 
-        <p>Estrena hoy tu Vento {{$moto_model}} con {{$discount}} de descuento en <a href="{{$home}}"><b>www.vento.com</b></a></p>
+        <p>Estrena hoy tu Vento {{$moto_model}} con {{$discount}} de descuento en <a href="https://vento.com/"><b>www.vento.com</b></a></p>
 
         <!--<div class="btn" style="margin-top:30px;">
             <p><a href="{{$content_href}}">QUIERO MÁS INFORMACIÓN</a></p>
@@ -373,7 +373,7 @@
 
 		<a href="{{$planes}}">
 			<center>
-                <img src="{{$img_360}}" style="margin-top:20px;">
+                <img src="https://vento.com/mailing/content/{{$date}}/360-{{$date}}.gif" style="margin-top:20px;">
             </center>
 		</a>
 
@@ -447,7 +447,7 @@
     <div id="detallesm">
 		<p style="text-align:center;font-size:25px;"><b>360°</b></p>
 		<a href="{{$planes}}">
-			<center><img src="{{$img_360}}"></center>
+			<center><img src="https://vento.com/mailing/content/{{$date}}/360-{{$date}}.gif"></center>
 		</a>
 		<table align="center" style="margin-top:20px;">
 			<tr>
@@ -528,17 +528,17 @@
             </p>
             <div class="opcionver">
                 <a href="{{$reccomend_1_hrf}}">
-                    <center><img src="{{$reccomend_1_src}}" width="90%"></center>
+                    <center><img src="https://vento.com/mailing/content/{{$date}}/opcion1-{{$date}}.jpg" width="90%"></center>
                 </a>
             </div>
             <div class="opcionver">
                 <a href="{{$reccomend_2_hrf}}">
-                    <center><img src="{{$reccomend_2_src}}" width="90%"></center>
+                    <center><img src="https://vento.com/mailing/content/{{$date}}/opcion2-{{$date}}.jpg" width="90%"></center>
                 </a>
             </div>
             <div class="opcionver">
                 <a href="{{$reccomend_3_hrf}}">
-                    <center><img src="{{$reccomend_3_src}}" width="90%"></center>
+                    <center><img src="https://vento.com/mailing/content/{{$date}}/opcion3-{{$date}}.jpg" width="90%"></center>
                 </a>
             </div>
         </div>
@@ -546,20 +546,19 @@
 
     <div id="footer" style="background-color:#1c1d1d;">
         <div id="footercontent">
-            <a href="{{$home}}">
+            <a href="https://vento.com/">
                 <center><img src="https://vento.com/mailing/main/ventologo.png"></center>
             </a>
-
-            <p align="center">
-                <a href="https://vento.com/vento-mailer/public/unsubscribe/{{$TOKEN}}">unsubscribe</a> 
-            </p>
 
             <!--<p align="center">
                 <a href="https://vento.com/politicas-de-envio/">Políticas de Envío</a> │
                 <a href="https://vento.com/aviso-de-privacidad/">Aviso de Privacidad</a> │
                 <a href="https://vento.com/terminos-y-condiciones/">Términos y Condiciones</a>
             </p>-->
-            <p align="center" style="padding-top:30px;">Teléfono: 55 6384-6600</p>
+            <p align="center" style="padding-top:30px;">
+                <a href="https://vento.com/vento-mailer/public/unsubscribe/{{$TOKEN}}">Unsubscribe</a> | 
+                Teléfono: 55 6384-6600
+            </p>
             <p align="center">© 2022 Vento Motorcycles U.S.A</p>
         </div>
     </div>
