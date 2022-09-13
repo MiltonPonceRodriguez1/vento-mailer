@@ -48,7 +48,7 @@ Route::get('/send/{table?}', function ($table = "developers") {
         die();
     }
 
-    if(count($users) < 12) {
+    if(count($users) < 15) {
         for($i=0; $i < count($users); $i++) {
             echo "<h3>".$users[$i]->NOMBRE." => ".$users[$i]->TOKEN."</h3>";
         }
@@ -57,7 +57,8 @@ Route::get('/send/{table?}', function ($table = "developers") {
     for($i=0; $i < count($users); $i++) {
         $data_email['TOKEN'] = $users[$i]->TOKEN;
         Mail::send('mails.mail', $data_email, function($message) use ($users, $i) {
-            $message->to($users[$i]->EMAIL)->subject('Hello '.$users[$i]->NOMBRE.', Imparable con la naturaleza!');
+            //$message->to($users[$i]->EMAIL)->subject('Hello '.$users[$i]->NOMBRE.', pruebita xD.');
+            $message->to($users[$i]->EMAIL)->subject('¡Da el Grito con Motos Vento!');
         });
     }
 
