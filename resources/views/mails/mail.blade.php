@@ -307,7 +307,7 @@
             <img src="https://vento.com/mailing/content/{{$date}}/slogan-{{$date}}.png">
         </center>
 
-        <p>Estrena hoy tu Vento {{$moto_model}} con {{$discount}} de descuento en <a href="https://vento.com/"><b>www.vento.com</b></a></p>
+        <p>Estrena hoy tu Vento {{$moto_model}} con {{$discount}} de descuento en <a href="{{$content_href}}"><b>www.vento.com</b></a></p>
 
         <!--<div class="btn" style="margin-top:30px;">
             <p><a href="{{$content_href}}">QUIERO MÁS INFORMACIÓN</a></p>

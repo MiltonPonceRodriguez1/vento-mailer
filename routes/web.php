@@ -20,14 +20,14 @@ Route::get('/', function () {
 
 Route::get('/send/{table?}', function ($table = "developers") {
 
-    $data_email['date'] = "07sep22";
+    $data_email['date'] = "27sep22";
 
-    $data_email['content_href'] = "https://vento.com/storm-250/";
+    $data_email['content_href'] = "https://www.vento.com/vracer-250/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VRacer250_27Sep2022";
 
-    $data_email['moto_model'] = "STORM 250";
-    $data_email['discount'] = "$6,000";
+    $data_email['moto_model'] = "V-RACER 250";
+    $data_email['discount'] = "$16,000";
 
-    $data_email['planes'] = "https://vento.com/planes-storm-250/";
+    $data_email['planes'] = "https://www.vento.com/planes-vracer-250/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VRacer250_27Sep2022";
 
     $data_email['cilindrada'] = "250 c.c.";
     $data_email['vel_max'] = "130 km/h";
@@ -35,15 +35,17 @@ Route::get('/send/{table?}', function ($table = "developers") {
     $data_email['velocidades'] = "5";
     $data_email['potencia'] = "18 HP";
 
-    $data_email['reccomend_1_hrf'] = "https://vento.com/falkon-200/";
+    $data_email['reccomend_1_hrf'] = "https://www.vento.com/rocketman-carrera-250/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VRacer250_27Sep2022";
 
-    $data_email['reccomend_2_hrf'] = "https://vento.com/falkon-250/";
+    $data_email['reccomend_2_hrf'] = "https://www.vento.com/rocketman-sport-250/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VRacer250_27Sep2022";
 
-    $data_email['reccomend_3_hrf'] = "https://vento.com/tornado-250/";
+    $data_email['reccomend_3_hrf'] = "https://www.vento.com/rocketman-racing-250/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VRacer250_27Sep2022";
 
     $data = array(
-        'status' => 400,
-        'msg' => 'Error'
+        'code' => 400,
+        'msg' => 'Error',
+        'table' => $table,
+        'count' => 0
     );
 
     try {
@@ -60,19 +62,23 @@ Route::get('/send/{table?}', function ($table = "developers") {
     //     }
     // }
 
+    $n = count($users);
+
     // for($i=0; $i < count($users); $i++) {
     //     $data_email['TOKEN'] = $users[$i]->TOKEN;
     //     Mail::send('mails.mail', $data_email, function($message) use ($users, $i) {
     //         //$message->to($users[$i]->EMAIL)->subject('Hello '.$users[$i]->NOMBRE.', pruebita xD.');
-    //         $message->to($users[$i]->EMAIL)->subject('¡Da el Grito con Motos Vento!');
+    //         $message->to($users[$i]->EMAIL)->subject('Aprovecha el descuento de $16,000 y estrena tu V-Racer 250');
     //     });
     // }
 
     
     $data = array(
-        'status' => 200,
+        'code' => 200,
         'msg' => 'Success',
-        'users' => $users
+        'users' => $users,
+        'table' => $table,
+        'count' => $n
     );
     
     echo json_encode($data);
