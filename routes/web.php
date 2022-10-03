@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\MailerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,9 @@ Route::get('/', function () {
 
 Route::get('/send/{table?}', function ($table = "developers") {
 
-    $data_email['date'] = "27sep22";
+    $data_email['date'] = "30sep22";
 
-    $data_email['content_href'] = "https://www.vento.com/vracer-250/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VRacer250_27Sep2022";
+    $data_email['content_href'] = "https://www.vento.com/ventodays/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VentoDays_30Sep2022";
 
     $data_email['moto_model'] = "V-RACER 250";
     $data_email['discount'] = "$16,000";
@@ -52,23 +53,15 @@ Route::get('/send/{table?}', function ($table = "developers") {
         $users = DB::table($table)->get();
     } catch (\Throwable $th) {
         echo json_encode($data);
-        // echo "<center><h1 style='color: red;'>Error La Tabla No Existe</h1></center>";
         die();
     }
 
-    // if(count($users) < 15) {
-    //     for($i=0; $i < count($users); $i++) {
-    //         echo "<h3>".$users[$i]->NOMBRE." => ".$users[$i]->TOKEN."</h3>";
-    //     }
-    // }
-
     $n = count($users);
 
-    // for($i=0; $i < count($users); $i++) {
+    // for($i=0; $i < $n; $i++) {
     //     $data_email['TOKEN'] = $users[$i]->TOKEN;
     //     Mail::send('mails.mail', $data_email, function($message) use ($users, $i) {
-    //         //$message->to($users[$i]->EMAIL)->subject('Hello '.$users[$i]->NOMBRE.', pruebita xD.');
-    //         $message->to($users[$i]->EMAIL)->subject('Aprovecha el descuento de $16,000 y estrena tu V-Racer 250');
+    //         $message->to($users[$i]->EMAIL)->subject('Hola '.$users[$i]->NOMBRE.', ¿Irás a la rodada de Vento Days? Sigue estos consejos');
     //     });
     // }
 
@@ -82,9 +75,6 @@ Route::get('/send/{table?}', function ($table = "developers") {
     );
     
     echo json_encode($data);
-
-    // return "<h1 style='text-align: center;'><span style='color: rgb(35, 111, 161); font-family: 'comic sans ms', sans-serif;'>CORREO ENVIADO CORRECTAMENTE</span></h1>";  
-
 });
 
 Route::get('/unsubscribe/{TOKEN}', function($TOKEN){
@@ -121,3 +111,6 @@ Route::get('/pruebas/{name?}', function($name = null){
     
     echo $text;
 });
+
+Route::post('/api/count', [MailerController::class, 'getTotalUsers']);
+Route::post('/api/send', [MailerController::class, 'send']);
