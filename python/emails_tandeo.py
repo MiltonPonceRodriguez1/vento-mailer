@@ -32,8 +32,6 @@ def send_mails():
             tanda = 5
         else :
             tanda = 500
-        
-        tanda = 9
 
         begin = 0
         end = begin + tanda
