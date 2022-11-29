@@ -243,7 +243,7 @@
 
 <body>
 
-<div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"> Es momento de estrenar con Motos Vento &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div>
+<div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"> Es la ultima semana para aprovechar del Vuen Fin! </div>
     <!--Header Web-->
     <div id="header">
         <table align="center">

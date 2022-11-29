@@ -16,26 +16,26 @@ class MailerController extends Controller
         $index_end = $request->input('index_end');
 
         # INICIO DE LOS DATOS DEL ENVIO
-        $data_email['date'] = "13oct22";
+        $data_email['date'] = "21nov22";
 
-        $data_email['content_href'] = "https://www.vento.com/crossmax-250/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_Crossmax250_13Oct2022";
+        $data_email['content_href'] = "https://www.vento.com/xpress-150/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
 
-        $data_email['moto_model'] = "CROSSMAX 250";
-        $data_email['discount'] = "$5,000";
+        $data_email['moto_model'] = "XPRESS 150";
+        $data_email['discount'] = "$6,000";
 
-        $data_email['planes'] = "https://www.vento.com/planes-crossmax-250/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_Crossmax250_13Oct2022";
+        $data_email['planes'] = "https://www.vento.com/xpress-150/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
 
-        $data_email['cilindrada'] = "250 c.c.";
-        $data_email['vel_max'] = "130 km/h";
-        $data_email['rendimiento'] = "30 km/l";
+        $data_email['cilindrada'] = "150 c.c.";
+        $data_email['vel_max'] = "100 km/h";
+        $data_email['rendimiento'] = "35 km/l";
         $data_email['velocidades'] = "5";
-        $data_email['potencia'] = "18 HP";
+        $data_email['potencia'] = "13.7 HP";
 
-        $data_email['reccomend_1_hrf'] = "https://www.vento.com/crossmax-150/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_Crossmax250_13Oct2022";
+        $data_email['reccomend_1_hrf'] = "https://www.vento.com/crossmax-200/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
 
-        $data_email['reccomend_2_hrf'] = "https://www.vento.com/crossmax-200/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_Crossmax250_13Oct2022";
+        $data_email['reccomend_2_hrf'] = "https://www.vento.com/lithium-150-4/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
 
-        $data_email['reccomend_3_hrf'] = "https://www.vento.com/crossmax-250-pro/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_Crossmax250_13Oct2022";
+        $data_email['reccomend_3_hrf'] = "https://www.vento.com/screamer-250/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
         # FIN DE LOS DATOS DEL ENVIO
 
         try {
@@ -45,7 +45,7 @@ class MailerController extends Controller
             for($i=$index_init; $i < $index_end; $i++) {
                 $data_email['TOKEN'] = $users[$i]->TOKEN;
                 Mail::send('mails.mail', $data_email, function($message) use ($users, $i) {
-                    $message->to($users[$i]->EMAIL)->subject('Hola '.$users[$i]->NOMBRE.', Aprovecha el descuento de $5,000 y estrena tu Crossmax 250');
+                    $message->to($users[$i]->EMAIL)->subject('Hola '.$users[$i]->NOMBRE.', Atencion Requerida: Ultimo Aviso');
                 });
             }
 

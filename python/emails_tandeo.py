@@ -11,7 +11,7 @@ def send_mails():
     	"Content-Type": "application/json"
     }
 
-    table = "developers"
+    table = "users"
 
     data_api = json.dumps({"table": table})
     # FIN DE LAS CONFIGURACIONES Y DATOS DEL API
