@@ -119,8 +119,7 @@ class MailerController extends Controller
     }
 
     public function preview_template(Request $request) {
-
-
+        /* RECOLECCION DE LOS DATOS CORRESPONDIENTES DEL MAIL SELECCIONADO PARA ENVIAR */
         $data_email['date'] = $request->input('date');
         $data_email['header_img'] = $request->input('header_img');
         $data_email['header_url'] = $request->input('header_url');
@@ -141,31 +140,9 @@ class MailerController extends Controller
         $data_email['option_three_url'] = $request->input('option_three_url');
         $data_email['slogan_img'] = $request->input('slogan_img');
         $data_email['TOKEN'] = "Test_Token";
+        /* DATOS CORRESPONDIENTES DEL MAIL SELECCIONADO */
 
-        // var_dump($data_email);
-        // die();
-        // $data_email['date'] = "21nov22";
-
-        // $data_email['content_href'] = "https://www.vento.com/xpress-150/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
-
-        // $data_email['motorcycle'] = "XPRESS 150";
-        // $data_email['discount'] = "$6,000";
-
-        // $data_email['plans_url'] = "https://www.vento.com/xpress-150/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
-
-        // $data_email['displacement'] = "150 c.c.";
-        // $data_email['max_speed'] = "100 km/h";
-        // $data_email['performance'] = "35 km/l";
-        // $data_email['speeds'] = "5";
-        // $data_email['power'] = "13.7 HP";
-
-        // $data_email['reccomend_1_hrf'] = "https://www.vento.com/crossmax-200/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
-
-        // $data_email['reccomend_2_hrf'] = "https://www.vento.com/lithium-150-4/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
-
-        // $data_email['reccomend_3_hrf'] = "https://www.vento.com/screamer-250/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
-        // $data_email['TOKEN'] = "XDSSSSSSSSSSSSSSSS";
-
+        /* RETORNO DE LA TEMPLATE SELECCIONADA CON LOS DATOS DEL EMAIL */
         return view('mails/first', $data_email);
     }
 }
