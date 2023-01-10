@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::get('/unsubscribe/{token}', function($token){
     $user = DB::table('users')->where('TOKEN', $token)->first();
-        
+
     if (is_object($user)) {
         $test = DB::insert('INSERT INTO unsubscribe_users (ID, NOMBRE, EMAIL) values (?, ?, ?)', [null, $user->NOMBRE, $user->EMAIL]);
         $response = DB::table('users')->where('TOKEN', $token)->delete();
@@ -51,4 +51,4 @@ Route::get('/unsubscribe/{token}', function($token){
 Route::post('/api/count', [MailerController::class, 'getTotalUsers']);
 Route::post('/api/send', [MailerController::class, 'send']);
 Route::get('/api/unsubscribe/{token}', [MailerController::class, 'unsubscribe']);
-Route::get('/api/get-template/', [MailerController::class, 'get_template']);
+Route::post('/api/preview-template/', [MailerController::class, 'preview_template']);
