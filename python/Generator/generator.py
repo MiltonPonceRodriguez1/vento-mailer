@@ -48,7 +48,8 @@ motos = [
     # "ALPINA300",
     # "SPIRIT150ZX",
     # "RYDER1504",
-    "GTS250"
+    # "GTS250",
+    'SCREAMER250V'
 ]
 
 # print(len(motos))

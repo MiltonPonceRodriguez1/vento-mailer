@@ -51,3 +51,4 @@ Route::get('/unsubscribe/{token}', function($token){
 Route::post('/api/count', [MailerController::class, 'getTotalUsers']);
 Route::post('/api/send', [MailerController::class, 'send']);
 Route::get('/api/unsubscribe/{token}', [MailerController::class, 'unsubscribe']);
+Route::get('/api/get-template/', [MailerController::class, 'get_template']);

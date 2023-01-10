@@ -117,4 +117,30 @@ class MailerController extends Controller
             'data' => $data
         ));
     }
+
+    public function get_template() {
+        $data_email['date'] = "21nov22";
+
+        $data_email['content_href'] = "https://www.vento.com/xpress-150/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
+
+        $data_email['moto_model'] = "XPRESS 150";
+        $data_email['discount'] = "$6,000";
+
+        $data_email['planes'] = "https://www.vento.com/xpress-150/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
+
+        $data_email['cilindrada'] = "150 c.c.";
+        $data_email['vel_max'] = "100 km/h";
+        $data_email['rendimiento'] = "35 km/l";
+        $data_email['velocidades'] = "5";
+        $data_email['potencia'] = "13.7 HP";
+
+        $data_email['reccomend_1_hrf'] = "https://www.vento.com/crossmax-200/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
+
+        $data_email['reccomend_2_hrf'] = "https://www.vento.com/lithium-150-4/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
+
+        $data_email['reccomend_3_hrf'] = "https://www.vento.com/screamer-250/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
+        $data_email['TOKEN'] = "XDSSSSSSSSSSSSSSSS";
+
+        return view('mails/mail', $data_email);
+    }
 }
