@@ -148,26 +148,36 @@ class MailerController extends Controller
 
     public function preview() {
         $data_email['date'] = $_GET['date'];
-        $data_email['header_img'] = $_GET['header_img'];
+        $data_email['header_img'] = $this->convertData($_GET['header_img']);
+
+        // $data_email['header_img'] = "https://sm.ign.com/t/ign_latam/feature/t/the-10-bes/the-10-best-dragon-ball-z-characters_t6vs.1200.jpg";
         $data_email['header_url'] = $_GET['header_url'];
         $data_email['motorcycle'] = $_GET['motorcycle'];
         $data_email['discount'] = $_GET['discount'];
         $data_email['plans_url'] = $_GET['plans_url'];
-        $data_email['motorcycle_img_360'] = $_GET['motorcycle_img_360'];
+        $data_email['motorcycle_img_360'] = $this->convertData($_GET['motorcycle_img_360']);
         $data_email['displacement'] = $_GET['displacement'];
         $data_email['max_speed'] = $_GET['max_speed'];
         $data_email['performance'] = $_GET['performance'];
         $data_email['speeds'] = $_GET['speeds'];
         $data_email['power'] = $_GET['power'];
-        $data_email['option_one_img'] = $_GET['option_one_img'];
+        $data_email['option_one_img'] = $this->convertData($_GET['option_one_img']);
         $data_email['option_one_url'] = $_GET['option_one_url'];
-        $data_email['option_two_img'] = $_GET['option_two_img'];
+        $data_email['option_two_img'] = $this->convertData($_GET['option_two_img']);
         $data_email['option_two_url'] = $_GET['option_two_url'];
-        $data_email['option_three_img'] = $_GET['option_three_img'];
+        $data_email['option_three_img'] = $this->convertData($_GET['option_three_img']);
         $data_email['option_three_url'] = $_GET['option_three_url'];
-        $data_email['slogan_img'] = $_GET['slogan_img'];
+        $data_email['slogan_img'] = $this->convertData($_GET['slogan_img']);
         $data_email['TOKEN'] = "Test_Token";
+        // var_dump($data_email['header_img']);
+        // die();
 
         return view('mails/first', $data_email);
+    }
+
+    public function convertData($str_convert) {
+        $str_convert = str_replace(" ", "%20", $str_convert);
+        $str_convert = str_replace(",", "%2C", $str_convert);
+        return $str_convert;
     }
 }
