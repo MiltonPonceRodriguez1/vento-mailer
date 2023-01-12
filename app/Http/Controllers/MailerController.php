@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
-class MailerController extends Controller
-{
+class MailerController extends Controller {
     public function send(Request $request) {
         # INDICE DE INICIO DEL ENVIO
         $index_init = $request->input('index_init');
@@ -69,24 +68,21 @@ class MailerController extends Controller
 
     public function getTotalUsers(Request $request) {
         try {
-            $users = DB::table($request->input('table'))->get();
-
             $data = array(
                 'code' => 200,
-                'status' => 'Success',
-                'msg' => "Tabla Correcta!",
-                'count' => count($users)
+                'status' => 'success',
+                'message' => "Petición atendida correctamente!",
+                'count_mysql' => DB::table($request->input('table'))->count()
             );
         } catch (\Throwable $th) {
             $data = array(
                 'code' => 400,
-                'status' => 'Error',
-                'msg' => "La Tabla ".$request->input('table').", No Existe!"
+                'status' => 'error',
+                'message' => "La Tabla ".$request->input('table').", No Existe!"
             );
         }
 
         return response()->json($data, $data['code']);
-
     }
 
     public function unsubscribe($token) {
@@ -146,11 +142,15 @@ class MailerController extends Controller
         return view('mails/first', $data_email);
     }
 
+    public function convertData($str_convert) {
+        $str_convert = str_replace(" ", "%20", $str_convert);
+        $str_convert = str_replace(",", "%2C", $str_convert);
+        return $str_convert;
+    }
+
     public function preview() {
         $data_email['date'] = $_GET['date'];
         $data_email['header_img'] = 'http://'.$this->convertData($_GET['header_img']);
-
-        // $data_email['header_img'] = "https://sm.ign.com/t/ign_latam/feature/t/the-10-bes/the-10-best-dragon-ball-z-characters_t6vs.1200.jpg";
         $data_email['header_url'] = $_GET['header_url'];
         $data_email['motorcycle'] = $_GET['motorcycle'];
         $data_email['discount'] = $_GET['discount'];
@@ -169,15 +169,8 @@ class MailerController extends Controller
         $data_email['option_three_url'] = $_GET['option_three_url'];
         $data_email['slogan_img'] = 'http://'.$this->convertData($_GET['slogan_img']);
         $data_email['TOKEN'] = "Test_Token";
-        // var_dump($data_email['header_img']);
-        // die();
 
         return view('mails/first', $data_email);
     }
 
-    public function convertData($str_convert) {
-        $str_convert = str_replace(" ", "%20", $str_convert);
-        $str_convert = str_replace(",", "%2C", $str_convert);
-        return $str_convert;
-    }
 }
