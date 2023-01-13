@@ -72,7 +72,7 @@ class MailerController extends Controller {
                 'code' => 200,
                 'status' => 'success',
                 'message' => "Petición atendida correctamente!",
-                'count_mysql' => DB::table($request->input('table'))->count()
+                'count' => DB::table($request->input('table'))->count()
             );
         } catch (\Throwable $th) {
             $data = array(
@@ -114,33 +114,6 @@ class MailerController extends Controller {
         ));
     }
 
-    public function preview_template(Request $request) {
-        /* RECOLECCION DE LOS DATOS CORRESPONDIENTES DEL MAIL SELECCIONADO PARA ENVIAR */
-        $data_email['date'] = $request->input('date');
-        $data_email['header_img'] = $request->input('header_img');
-        $data_email['header_url'] = $request->input('header_url');
-        $data_email['motorcycle'] = $request->input('motorcycle');
-        $data_email['discount'] = $request->input('discount');
-        $data_email['plans_url'] = $request->input('plans_url');
-        $data_email['motorcycle_img_360'] = $request->input('motorcycle_img_360');
-        $data_email['displacement'] = $request->input('displacement');
-        $data_email['max_speed'] = $request->input('max_speed');
-        $data_email['performance'] = $request->input('performance');
-        $data_email['speeds'] = $request->input('speeds');
-        $data_email['power'] = $request->input('power');
-        $data_email['option_one_img'] = $request->input('option_one_img');
-        $data_email['option_one_url'] = $request->input('option_one_url');
-        $data_email['option_two_img'] = $request->input('option_two_img');
-        $data_email['option_two_url'] = $request->input('option_two_url');
-        $data_email['option_three_img'] = $request->input('option_three_img');
-        $data_email['option_three_url'] = $request->input('option_three_url');
-        $data_email['slogan_img'] = $request->input('slogan_img');
-        $data_email['TOKEN'] = "Test_Token";
-        /* DATOS CORRESPONDIENTES DEL MAIL SELECCIONADO */
-
-        /* RETORNO DE LA TEMPLATE SELECCIONADA CON LOS DATOS DEL EMAIL */
-        return view('mails/first', $data_email);
-    }
 
     public function convertData($str_convert) {
         $str_convert = str_replace(" ", "%20", $str_convert);
@@ -171,6 +144,67 @@ class MailerController extends Controller {
         $data_email['TOKEN'] = "Test_Token";
 
         return view('mails/first', $data_email);
+    }
+
+    public function massMailing(Request $request) {
+        $table = $request->input('table');
+
+        if($table == 'users'){
+            echo "<h1>WARNING USERS TABLE</h1>";
+            die();
+        }
+
+        $subject = $request->input('subject');
+        $skip = $request->input('skip');
+        $take = $request->input('take');
+
+        $begin = $request->input('begin');
+        $end = $request->input('end');
+
+        $data_email['date'] = $request->input('date');
+        $data_email['header_img'] = 'https://'.$this->convertData($request->input('header_img'));
+        $data_email['header_url'] = $request->input('header_url');
+        $data_email['motorcycle'] = $request->input('motorcycle');
+        $data_email['discount'] = $request->input('discount');
+        $data_email['plans_url'] = $request->input('plans_url');
+        $data_email['motorcycle_img_360'] = 'https://'.$this->convertData($request->input('motorcycle_img_360'));
+        $data_email['displacement'] = $request->input('displacement');
+        $data_email['max_speed'] = $request->input('max_speed');
+        $data_email['performance'] = $request->input('performance');
+        $data_email['speeds'] = $request->input('speeds');
+        $data_email['power'] = $request->input('power');
+        $data_email['option_one_img'] = 'https://'.$this->convertData($request->input('option_one_img'));
+        $data_email['option_one_url'] = $request->input('option_one_url');
+        $data_email['option_two_img'] = 'https://'.$this->convertData($request->input('option_two_img'));
+        $data_email['option_two_url'] = $request->input('option_two_url');
+        $data_email['option_three_img'] = 'https://'.$this->convertData($request->input('option_three_img'));
+        $data_email['option_three_url'] = $request->input('option_three_url');
+        $data_email['slogan_img'] = 'https://'.$this->convertData($request->input('slogan_img'));
+
+        try {
+            $users = DB::table($table)->skip($skip)->take($take)->get();
+
+            foreach ($users as $user) {
+                $data_email['TOKEN'] = $user->TOKEN;
+                Mail::send('mails.first', $data_email, function($message) use ($user, $subject) {
+                    $message->to($user->EMAIL)->subject('Hola '.$user->NOMBRE.', '.$subject);
+                });
+            }
+
+            $data = array(
+                'code' => 200,
+                'status' => 'success',
+                'msg' => "Tandeo Enviado Correctamente!"
+            );
+        } catch (\Throwable $th) {
+            $data = array(
+                'code' => 400,
+                'status' => 'Error',
+                'msg' => "La Tabla ".$request->input('table').", No Existe!"
+            );
+        }
+
+        return response()->json($data, $data['code']);
     }
 
 }

@@ -295,6 +295,7 @@
         <a href="{{$header_url}}" target="_blank">
             <center>
                 <!-- <img src="https://vento.com/mailing/content/{{$date}}/encabezado-{{$date}}.gif" width="100%"> -->
+
                 <img src="{{$header_img}}" width="100%">
             </center>
         </a>

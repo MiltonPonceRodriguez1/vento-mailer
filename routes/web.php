@@ -52,3 +52,4 @@ Route::post('/api/count', [MailerController::class, 'getTotalUsers']);
 Route::post('/api/send', [MailerController::class, 'send']);
 Route::get('/api/unsubscribe/{token}', [MailerController::class, 'unsubscribe']);
 Route::get('/api/preview', [MailerController::class, 'preview']);
+Route::post('/api/mass-mailing', [MailerController::class , 'massMailing']);
