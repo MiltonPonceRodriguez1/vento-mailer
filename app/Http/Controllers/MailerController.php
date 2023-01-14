@@ -123,35 +123,40 @@ class MailerController extends Controller {
 
     public function preview() {
         $data_email['date'] = $_GET['date'];
-        $data_email['header_img'] = 'http://'.$this->convertData($_GET['header_img']);
+        $data_email['header_img'] = $_GET['header_img'];
         $data_email['header_url'] = $_GET['header_url'];
         $data_email['motorcycle'] = $_GET['motorcycle'];
         $data_email['discount'] = $_GET['discount'];
         $data_email['plans_url'] = $_GET['plans_url'];
-        $data_email['motorcycle_img_360'] = 'http://'.$this->convertData($_GET['motorcycle_img_360']);
+        $data_email['motorcycle_img_360'] = $_GET['motorcycle_img_360'];
         $data_email['displacement'] = $_GET['displacement'];
         $data_email['max_speed'] = $_GET['max_speed'];
         $data_email['performance'] = $_GET['performance'];
         $data_email['speeds'] = $_GET['speeds'];
         $data_email['power'] = $_GET['power'];
-        $data_email['option_one_img'] = 'http://'.$this->convertData($_GET['option_one_img']);
+        $data_email['option_one_img'] = $_GET['option_one_img'];
         $data_email['option_one_url'] = $_GET['option_one_url'];
-        $data_email['option_two_img'] = 'http://'.$this->convertData($_GET['option_two_img']);
+        $data_email['option_two_img'] = $_GET['option_two_img'];
         $data_email['option_two_url'] = $_GET['option_two_url'];
-        $data_email['option_three_img'] = 'http://'.$this->convertData($_GET['option_three_img']);
+        $data_email['option_three_img'] = $_GET['option_three_img'];
         $data_email['option_three_url'] = $_GET['option_three_url'];
-        $data_email['slogan_img'] = 'http://'.$this->convertData($_GET['slogan_img']);
+        $data_email['slogan_img'] = $_GET['slogan_img'];
         $data_email['TOKEN'] = "Test_Token";
 
         return view('mails/first', $data_email);
     }
 
     public function massMailing(Request $request) {
+        $data = array(
+            'code' => 400,
+            'status' => 'Error',
+            'message' => "Error al conectarse a la DB"
+        );
+
         $table = $request->input('table');
 
-        if($table == 'users'){
-            echo "<h1>WARNING USERS TABLE</h1>";
-            die();
+        if($table == 'users' || $table == 'marketing'){
+            return response()->json($data, $data['code']);
         }
 
         $subject = $request->input('subject');
@@ -162,24 +167,24 @@ class MailerController extends Controller {
         $end = $request->input('end');
 
         $data_email['date'] = $request->input('date');
-        $data_email['header_img'] = 'https://'.$this->convertData($request->input('header_img'));
+        $data_email['header_img'] = $request->input('header_img');
         $data_email['header_url'] = $request->input('header_url');
         $data_email['motorcycle'] = $request->input('motorcycle');
         $data_email['discount'] = $request->input('discount');
         $data_email['plans_url'] = $request->input('plans_url');
-        $data_email['motorcycle_img_360'] = 'https://'.$this->convertData($request->input('motorcycle_img_360'));
+        $data_email['motorcycle_img_360'] = $request->input('motorcycle_img_360');
         $data_email['displacement'] = $request->input('displacement');
         $data_email['max_speed'] = $request->input('max_speed');
         $data_email['performance'] = $request->input('performance');
         $data_email['speeds'] = $request->input('speeds');
         $data_email['power'] = $request->input('power');
-        $data_email['option_one_img'] = 'https://'.$this->convertData($request->input('option_one_img'));
+        $data_email['option_one_img'] = $request->input('option_one_img');
         $data_email['option_one_url'] = $request->input('option_one_url');
-        $data_email['option_two_img'] = 'https://'.$this->convertData($request->input('option_two_img'));
+        $data_email['option_two_img'] = $request->input('option_two_img');
         $data_email['option_two_url'] = $request->input('option_two_url');
-        $data_email['option_three_img'] = 'https://'.$this->convertData($request->input('option_three_img'));
+        $data_email['option_three_img'] = $request->input('option_three_img');
         $data_email['option_three_url'] = $request->input('option_three_url');
-        $data_email['slogan_img'] = 'https://'.$this->convertData($request->input('slogan_img'));
+        $data_email['slogan_img'] = $request->input('slogan_img');
 
         try {
             $users = DB::table($table)->skip($skip)->take($take)->get();
@@ -194,14 +199,11 @@ class MailerController extends Controller {
             $data = array(
                 'code' => 200,
                 'status' => 'success',
-                'msg' => "Tandeo Enviado Correctamente!"
+                'message' => "Tandeo Enviado Correctamente!",
+                'users' => $users
             );
         } catch (\Throwable $th) {
-            $data = array(
-                'code' => 400,
-                'status' => 'Error',
-                'msg' => "La Tabla ".$request->input('table').", No Existe!"
-            );
+
         }
 
         return response()->json($data, $data['code']);
