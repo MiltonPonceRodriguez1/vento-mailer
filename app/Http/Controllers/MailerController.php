@@ -189,12 +189,12 @@ class MailerController extends Controller {
         try {
             $users = DB::table($table)->skip($skip)->take($take)->get();
 
-            foreach ($users as $user) {
-                $data_email['TOKEN'] = $user->TOKEN;
-                Mail::send('mails.first', $data_email, function($message) use ($user, $subject) {
-                    $message->to($user->EMAIL)->subject('Hola '.$user->NOMBRE.', '.$subject);
-                });
-            }
+            // foreach ($users as $user) {
+            //     $data_email['TOKEN'] = $user->TOKEN;
+            //     Mail::send('mails.first', $data_email, function($message) use ($user, $subject) {
+            //         $message->to($user->EMAIL)->subject('Hola '.$user->NOMBRE.', '.$subject);
+            //     });
+            // }
 
             $data = array(
                 'code' => 200,
