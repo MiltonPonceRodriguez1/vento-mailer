@@ -243,7 +243,7 @@
 
 <body>
 
-<div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"> Es la ultima semana para aprovechar del Vuen Fin! </div>
+<div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"> ¡Explora la ciudad sin límites! </div>
     <!--Header Web-->
     <div id="header">
         <table align="center">
@@ -562,7 +562,7 @@
                 <a href="https://vento.com/vento-mailer/public/unsubscribe/{{$TOKEN}}">Unsubscribe</a> |
                 Teléfono: 55 6384-6600
             </p>
-            <p align="center">© 2022 Vento Motorcycles U.S.A</p>
+            <p align="center">© 2023 Vento Motorcycles U.S.A</p>
         </div>
     </div>
 </body>

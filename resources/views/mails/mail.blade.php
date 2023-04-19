@@ -243,7 +243,7 @@
 
 <body>
 
-<div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"> Es la ultima semana para aprovechar del Vuen Fin! </div>
+<div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"> ¡Explora la ciudad sin límites! </div>
     <!--Header Web-->
     <div id="header">
         <table align="center">
@@ -279,8 +279,8 @@
         </table>
     </div>
     <!--Header Web Fin-->
-    
-    
+
+
     <!--Header Mobile-->
     <div id="headerm">
 		<a href="https://vento.com/">
@@ -289,7 +289,7 @@
 	</div>
     <!--Header Mobile Fin-->
 
-    
+
     <!--Comienza Content-->
     <div id="content">
         <a href="{{$content_href}}" target="_blank">
@@ -299,8 +299,8 @@
         </a>
     </div>
     <!--Termina Content-->
-    
-	
+
+
     <!--Comienza Title-->
     <div id="title">
         <center>
@@ -363,7 +363,7 @@
 		<!--Termina Botonesm-->
     </div>
     <!--Termina Title-->
-    
+
 
 
 
@@ -556,10 +556,10 @@
                 <a href="https://vento.com/terminos-y-condiciones/">Términos y Condiciones</a>
             </p>-->
             <p align="center" style="padding-top:30px;">
-                <a href="https://vento.com/vento-mailer/public/unsubscribe/{{$TOKEN}}">Unsubscribe</a> | 
+                <a href="https://vento.com/vento-mailer/public/unsubscribe/{{$TOKEN}}">Unsubscribe</a> |
                 Teléfono: 55 6384-6600
             </p>
-            <p align="center">© 2022 Vento Motorcycles U.S.A</p>
+            <p align="center">© 2023 Vento Motorcycles U.S.A</p>
         </div>
     </div>
 </body>

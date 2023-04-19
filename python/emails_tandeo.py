@@ -5,12 +5,13 @@ def send_mails():
     # table = input("Digita la Tabla: ")
 
     # INICIO DE LAS CONFIGURACIONES Y DATOS DEL API
-    url = f"http://localhost/vento-mailer/public/api/count"
+    url = f"http://localhost:8000/api/count"
 
     headers = {
     	"Content-Type": "application/json"
     }
 
+    ## !IMPORTANTE!  MODIFICAR ESTA VARIABLE
     table = "developers"
 
     data_api = json.dumps({"table": table})
@@ -19,13 +20,13 @@ def send_mails():
     # ENVIO DE LA PETICIÓN HTTP
     response = requests.post(url, headers=headers, data=data_api)
 
-    # DATOS CON LA RESPUESTA DEL API 
+    # DATOS CON LA RESPUESTA DEL API
     data = response.json()
 
     print("")
     if response.status_code == 200:
         # ENDPOINT
-        url = f"http://localhost/vento-mailer/public/api/send"
+        url = f"http://localhost:8000/api/send"
 
         count = data['count']
         if count < 500:
@@ -47,7 +48,11 @@ def send_mails():
 
             # RESPUESTA DEL API
             data = response.json()
-            print(f"TANDEO #{x} => {data['init']} -- {data['end']}")
+            if data['status'] == 'success':
+                print(f"TANDEO #{x} => {data['init']} -- {data['end']}")
+            else:
+                print(f"Error: {data['msg']}")
+
 
             begin = end
             end = end + tanda
@@ -64,7 +69,10 @@ def send_mails():
 
             # RESPUESTA DEL API
             data = response.json()
-            print(f"TANDEO FINAL => {data['init']} -- {data['end']}")
+            if data['status'] == 'success':
+                print(f"TANDEO FINAL => {data['init']} -- {data['end']}")
+            else:
+                print(f"Error: {data['msg']}")
     else:
         print(f"Error: {data['msg']}")
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\MailerController;
 
 /*
@@ -53,3 +54,4 @@ Route::post('/api/send', [MailerController::class, 'send']);
 Route::get('/api/unsubscribe/{token}', [MailerController::class, 'unsubscribe']);
 Route::get('/api/preview', [MailerController::class, 'preview']);
 Route::post('/api/mass-mailing', [MailerController::class , 'massMailing']);
+Route::get('/api/test', [MailerController::class , 'test']);

@@ -15,14 +15,14 @@ class MailerController extends Controller {
         $index_end = $request->input('index_end');
 
         # INICIO DE LOS DATOS DEL ENVIO
-        $data_email['date'] = "21nov22";
+        $data_email['date'] = "15mar23";
 
-        $data_email['content_href'] = "https://www.vento.com/xpress-150/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
+        $data_email['content_href'] = "https://www.vento.com/xplor-150/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_Xplor150_15Mar23";
 
-        $data_email['moto_model'] = "XPRESS 150";
-        $data_email['discount'] = "$6,000";
+        $data_email['moto_model'] = "XPLOR 150";
+        $data_email['discount'] = "$4,000";
 
-        $data_email['planes'] = "https://www.vento.com/xpress-150/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
+        $data_email['planes'] = "https://www.vento.com/xplor-150/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_Xplor150_15Mar23";
 
         $data_email['cilindrada'] = "150 c.c.";
         $data_email['vel_max'] = "100 km/h";
@@ -30,23 +30,23 @@ class MailerController extends Controller {
         $data_email['velocidades'] = "5";
         $data_email['potencia'] = "13.7 HP";
 
-        $data_email['reccomend_1_hrf'] = "https://www.vento.com/crossmax-200/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
+        $data_email['reccomend_1_hrf'] = "https://www.vento.com/crossmax-150/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_Xplor150_15Mar23";
 
-        $data_email['reccomend_2_hrf'] = "https://www.vento.com/lithium-150-4/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
+        $data_email['reccomend_2_hrf'] = "https://www.vento.com/crossmax-200/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_Xplor150_15Mar23";
 
-        $data_email['reccomend_3_hrf'] = "https://www.vento.com/screamer-250/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_VuenFin_Xpress150_21Nov22";
+        $data_email['reccomend_3_hrf'] = "https://www.vento.com/crossmax-250-pro/?utm_source=mailing&utm_medium=email&utm_campaign=NuevoMailing_Xplor150_15Mar23";
         # FIN DE LOS DATOS DEL ENVIO
 
         try {
             $users = DB::table($request->input('table'))->get();
 
             # ENVIO DE MAILS MASIVOS
-            for($i=$index_init; $i < $index_end; $i++) {
-                $data_email['TOKEN'] = $users[$i]->TOKEN;
-                Mail::send('mails.mail', $data_email, function($message) use ($users, $i) {
-                    $message->to($users[$i]->EMAIL)->subject('Hola '.$users[$i]->NOMBRE.', Atencion Requerida: Ultimo Aviso');
-                });
-            }
+            // for($i=$index_init; $i < $index_end; $i++) {
+            //     $data_email['TOKEN'] = $users[$i]->TOKEN;
+            //     Mail::send('mails.mail', $data_email, function($message) use ($users, $i) {
+            //         $message->to($users[$i]->EMAIL)->subject('Hola '.$users[$i]->NOMBRE.', ¡Explora la ciudad sin límites!');
+            //     });
+            // }
 
             $data = array(
                 'code' => 200,
@@ -55,15 +55,18 @@ class MailerController extends Controller {
                 'init' => $users[$index_init]->NOMBRE,
                 'end' => $users[$index_end - 1]->NOMBRE
             );
+
+            return response()->json($data, $data['code']);
         } catch (\Throwable $th) {
             $data = array(
                 'code' => 400,
-                'status' => 'Error',
+                'status' => 'error',
                 'msg' => "La Tabla ".$request->input('table').", No Existe!"
             );
+
+            return response()->json($data, $data['code']);
         }
 
-        return response()->json($data, $data['code']);
     }
 
     public function getTotalUsers(Request $request) {
@@ -74,15 +77,18 @@ class MailerController extends Controller {
                 'message' => "Petición atendida correctamente!",
                 'count' => DB::table($request->input('table'))->count()
             );
+
+            return response()->json($data, $data['code']);
         } catch (\Throwable $th) {
             $data = array(
                 'code' => 400,
                 'status' => 'error',
                 'message' => "La Tabla ".$request->input('table').", No Existe!"
             );
+
+            return response()->json($data, $data['code']);
         }
 
-        return response()->json($data, $data['code']);
     }
 
     public function unsubscribe($token) {
@@ -207,6 +213,13 @@ class MailerController extends Controller {
         }
 
         return response()->json($data, $data['code']);
+    }
+
+    public function test(Request $requesst) {
+        return response()->json(array(
+            "code" => 200,
+            "status" => "success"
+        ));
     }
 
 }
